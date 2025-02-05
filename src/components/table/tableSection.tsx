@@ -29,7 +29,7 @@ export const TableSection: React.FC<props> = () => {
 
   return (
     <SortProvider>
-      <div className="row">
+      <div className="overflow-scroll">
         <table className={tableStyle}>
           <caption>
             <div className="container">

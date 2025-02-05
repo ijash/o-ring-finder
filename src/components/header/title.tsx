@@ -10,7 +10,7 @@ export const Title: React.FC<TitleProps> = () => {
   const title = t("header.title");
 
   return (
-    <div className="position-relative text-center">
+    <div className="position-relative text-center px-2">
       <HelmetProvider>
         <Helmet>
           <title>{t("meta.title")}</title>
