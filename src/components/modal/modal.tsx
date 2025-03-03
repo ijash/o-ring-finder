@@ -1,5 +1,5 @@
 import { DataRepresentation } from "data";
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import ModalContent from "./modalContent";
 
@@ -11,6 +11,27 @@ interface ModalProps {
 
 const CustomModal: React.FC<ModalProps> = ({ show, handleClose, rowData }) => {
   const { t } = useTranslation("global");
+
+  useEffect(() => {
+    if (show) {
+      // Push state to history when modal opens
+      window.history.pushState({ modal: true }, "");
+
+      // Event handler for back button
+      const handlePopState = () => {
+        handleClose();
+      };
+
+      // Add event listener for popstate (back button)
+      window.addEventListener("popstate", handlePopState);
+
+      // Clean up event listener when component unmounts
+      return () => {
+        window.removeEventListener("popstate", handlePopState);
+      };
+    }
+  }, [show, handleClose]);
+
   if (!show || !rowData) return null;
   return (
     <div
