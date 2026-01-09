@@ -22,7 +22,7 @@ export function getSearchMethods(d: DataRepresentation): IFindProductProps[] {
       id: "maestroSealTokped",
       icon: iconTokped,
       name: "Maestro Seal - Tokopedia",
-      url: `https://www.tokopedia.com/maestroseal/product?q=oring%20${d.code}`,
+      url: `https://www.tokopedia.com/maestroseal?q=oring%20${d.code}`,
       region: "id",
     },
     {
@@ -46,7 +46,7 @@ export function getSearchMethods(d: DataRepresentation): IFindProductProps[] {
       id: "rajaseal1Tokped",
       icon: iconTokped,
       name: "Raja Seal - Tokopedia",
-      url: `https://www.tokopedia.com/rajaseal/product?q=oring%20${d.code}`,
+      url: `https://www.tokopedia.com/rajaseal?q=oring%20${d.code}`,
       region: "id",
     },
     {
@@ -62,7 +62,7 @@ export function getSearchMethods(d: DataRepresentation): IFindProductProps[] {
       id: "maestroSealShopee",
       icon: iconShopee,
       name: "Maestro Seal - Shopee",
-      url: `https://shopee.co.id/search?keyword=oring%20${d.code}&shop=385941495`,
+      url: `https://shopee.co.id/search?keyword=oring%20${d.code}&shop=1532830001`,
       region: "id",
     },
     {
