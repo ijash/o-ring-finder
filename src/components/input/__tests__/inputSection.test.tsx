@@ -125,4 +125,47 @@ describe("InputSection component", () => {
       unit: MeasurementUnit.MM,
     });
   });
+
+  test("parses numeric bounds and merges rapid multi-field updates without dropping fields", () => {
+    const onFilterChange = vi.fn();
+    render(
+      <TestWrapper onFilterChange={onFilterChange}>
+        <InputSection />
+      </TestWrapper>
+    );
+
+    const minIdInput = screen.getByPlaceholderText(/min id/i);
+    const maxIdInput = screen.getByPlaceholderText(/max id/i);
+
+    fireEvent.change(minIdInput, { target: { value: "12.5" } });
+    vi.advanceTimersByTime(200);
+    fireEvent.change(maxIdInput, { target: { value: "25" } });
+
+    vi.advanceTimersByTime(900); // 897ms debounce delay
+    expect(onFilterChange).toHaveBeenCalledWith(
+      expect.objectContaining({
+        unit: MeasurementUnit.MM,
+        minId: 12.5,
+        maxId: 25,
+      })
+    );
+  });
+
+  test("cancels pending debounce upon unmount", () => {
+    const onFilterChange = vi.fn();
+    const { unmount } = render(
+      <TestWrapper onFilterChange={onFilterChange}>
+        <InputSection />
+      </TestWrapper>
+    );
+
+    const codeInput = screen.getByPlaceholderText(/ring code/i);
+    fireEvent.change(codeInput, { target: { value: "JIS-P" } });
+
+    // Unmount before delay
+    unmount();
+    vi.advanceTimersByTime(1000);
+
+    expect(onFilterChange).not.toHaveBeenCalled();
+  });
 });

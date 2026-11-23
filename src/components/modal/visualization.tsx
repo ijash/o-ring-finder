@@ -123,20 +123,8 @@ const RingVisualization: React.FC<VisualizationProps> = ({
       },
     };
   };
-  // function getCSPosOffset(
-  //   dimensions: { height: number },
-  //   outerDiameter: number,
-  //   innerDiameter: number
-  // ): number {
-  //   const cs = (outerDiameter - innerDiameter) / 2;
-  //   const range = dimensions.height - outerDiameter;
-  //   const csRange = remapPercent(30, 100, (Math.min(cs, range) / range) * 100);
-  //   const result = -csRange * 0.1;
-  //   return Math.round(result * 100) / 100;
-  // }
 
   const lines = getLineCoordinates();
-  //   const labelMargins = (centerX - outerDiameter) * 0.2;
   const labelMargins = 10;
   return (
     <svg
@@ -302,31 +290,7 @@ const RingVisualization: React.FC<VisualizationProps> = ({
           fontFamily={RING_SIZE_LABEL.FONT_FAMILY}
           fontVariant={RING_SIZE_LABEL.FONT_VARIANT}
         >
-          <tspan
-            x={lines.cs.arrow.x1 + labelMargins}
-            dy={"-10"}
-            // TODO: fix using dynamic position, below has unknown glitch. `dy` result is the same with quoted one but  different position
-            // //ERROR ANEH!
-            // dy={((
-            //   dimensions: { height: number },
-            //   outerDiameter: number,
-            //   innerDiameter: number
-            // ): number =>
-            //   Math.round(
-            //     -remapPercent(
-            //       30,
-            //       100,
-            //       (Math.min(
-            //         (outerDiameter - innerDiameter) / 2,
-            //         dimensions.height - outerDiameter
-            //       ) /
-            //         (dimensions.height - outerDiameter)) *
-            //         100
-            //     ) *
-            //       0.1 *
-            //       100
-            //   ) / 100)(dimensions, outerDiameter, innerDiameter)}
-          >
+          <tspan x={lines.cs.arrow.x1 + labelMargins} dy="-10">
             CS
           </tspan>
           <tspan x={lines.cs.arrow.x1 + labelMargins} dy="10">

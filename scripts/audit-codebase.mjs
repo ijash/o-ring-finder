@@ -19,9 +19,11 @@
  */
 
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
-import { join, resolve } from "node:path";
+import { dirname, join, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 
-const REPO_ROOT = resolve(import.meta.dirname, "..");
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const REPO_ROOT = resolve(__dirname, "..");
 const SRC_DIR = resolve(REPO_ROOT, "src");
 
 const FORBIDDEN_FILES = [

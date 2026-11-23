@@ -1,11 +1,16 @@
 // ponytail: simple timer debounce; add leading/maxWait when needed
-export function debounce<Args extends unknown[]>(
-  fn: (...args: Args) => void,
+export interface DebouncedFunction<T extends (...args: unknown[]) => void> {
+  (...args: Parameters<T>): void;
+  cancel: () => void;
+}
+
+export function debounce<T extends (...args: unknown[]) => void>(
+  fn: T,
   delay: number
-): ((...args: Args) => void) & { cancel: () => void } {
+): DebouncedFunction<T> {
   let timer: ReturnType<typeof setTimeout> | undefined;
 
-  const debounced = (...args: Args) => {
+  const debounced = (...args: Parameters<T>) => {
     if (timer !== undefined) {
       clearTimeout(timer);
     }
@@ -23,3 +28,4 @@ export function debounce<Args extends unknown[]>(
 
   return debounced;
 }
+

@@ -87,4 +87,22 @@ describe("App integration tests", () => {
     expect(codeInput.value).toBe("");
     expect(window.scrollTo).toHaveBeenCalledWith(0, 0);
   });
+
+  test("renders valid meta description and semantic header navigation landmark", () => {
+    render(
+      <I18nextProvider i18n={i18next}>
+        <App />
+      </I18nextProvider>
+    );
+
+    const metaDescription = document.querySelector('meta[name="description"]');
+    expect(metaDescription).toBeInTheDocument();
+    expect(metaDescription).toHaveAttribute(
+      "content",
+      expect.stringContaining("o-ring size & code finder")
+    );
+
+    expect(screen.getByRole("banner")).toBeInTheDocument();
+    expect(screen.getByRole("navigation")).toBeInTheDocument();
+  });
 });

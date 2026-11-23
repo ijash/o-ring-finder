@@ -10,7 +10,7 @@ export const Title: React.FC = () => {
     <div className="position-relative text-center px-2">
       <title>{t("meta.title")}</title>
       <meta
-        name={t("meta.title")}
+        name="description"
         content={t("meta.description", { author: names.author.name })}
       />
 

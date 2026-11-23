@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 export default function LanguageDropdown() {
-  const { i18n } = useTranslation("global");
+  const { t, i18n } = useTranslation("global");
 
   useEffect(() => {
     document.documentElement.lang = i18n.language;
@@ -15,19 +15,17 @@ export default function LanguageDropdown() {
   }
 
   return (
-    // <div className="dropdown position-absolute top-0 end-0">
-    <div className="dropdown  d-flex">
+    <div className="dropdown d-flex">
       <button
-        className="btn btn-primary btn-sm dropdown-toggle "
+        className="btn btn-primary btn-sm dropdown-toggle"
         type="button"
         data-bs-toggle="dropdown"
         aria-expanded="false"
+        aria-label={t("langSelect.display")}
       >
         <IconLanguage />
-
-        {/* <small>{t("langSelect.display")}</small> */}
       </button>
-      <ul className="dropdown-menu dropdown-menu-end ">
+      <ul className="dropdown-menu dropdown-menu-end">
         <li>
           <button
             className={`dropdown-item ${

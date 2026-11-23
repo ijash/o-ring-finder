@@ -1,5 +1,5 @@
 import { debounce } from "utils";
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
 import oringSpec from "assets/img/oring-spec.jpg";
@@ -17,41 +17,63 @@ import { IDataFilter, MeasurementUnit } from "data";
 export const InputSection: React.FC<StandardElementProps> = () => {
   const { t } = useTranslation("global");
 
-  const { filter, setFilter } = useFilter();
+  const { setFilter } = useFilter();
+  const formRef = useRef<HTMLFormElement>(null);
+  const pendingFilterRef = useRef<Partial<IDataFilter>>({});
 
   const updateContextDelay = 897; //milliseconds
-  const setFilterDebounced = useCallback(
-    debounce((nextFilter: IDataFilter) => {
-      setFilter(nextFilter);
+  const debouncedFlush = useCallback(
+    debounce(() => {
+      const updates = { ...pendingFilterRef.current };
+      pendingFilterRef.current = {};
+      setFilter((prev) => ({
+        ...prev,
+        ...updates,
+      }));
     }, updateContextDelay),
     [setFilter, updateContextDelay]
   );
 
+  useEffect(() => {
+    return () => {
+      debouncedFlush.cancel();
+    };
+  }, [debouncedFlush]);
+
+  const isNumericField = (name: keyof IDataFilter): boolean =>
+    name === "minId" ||
+    name === "maxId" ||
+    name === "minOd" ||
+    name === "maxOd" ||
+    name === "minCs" ||
+    name === "maxCs";
+
   const handleFilter = (filterName: keyof IDataFilter) => {
     return (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-      const filterValue = {
-        ...filter,
-        [filterName]: event.target.value,
-      };
+      const raw = event.target.value;
+      const parsedValue = isNumericField(filterName)
+        ? raw.trim() === ""
+          ? undefined
+          : Number(raw)
+        : raw;
 
-      setFilterDebounced(filterValue);
+      pendingFilterRef.current[filterName] = parsedValue as never;
+      debouncedFlush();
     };
   };
 
   const handleClear = () => {
-    setFilter({
-      unit: filter.unit,
-    });
-    // clear all inputs
-    document.querySelectorAll("input").forEach((input) => {
-      input.value = "";
-    });
-
+    debouncedFlush.cancel();
+    pendingFilterRef.current = {};
+    setFilter((prev) => ({
+      unit: prev.unit,
+    }));
+    formRef.current?.reset();
     window.scrollTo(0, 0);
   };
 
   return (
-    <div>
+    <form ref={formRef} onSubmit={(e) => e.preventDefault()}>
       <div className="row text-start">
         <div
           className="
@@ -149,6 +171,7 @@ export const InputSection: React.FC<StandardElementProps> = () => {
           handleChange={handleClear}
         />
       </div>
-    </div>
+    </form>
   );
 };
+

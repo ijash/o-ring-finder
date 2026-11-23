@@ -17,7 +17,7 @@ describe("SortContext", () => {
 
     const { result } = renderHook(() => useSort(), { wrapper });
 
-    expect(result.current.sortBy).toBe("");
+    expect(result.current.sortBy).toBeNull();
     expect(result.current.sortDirection).toBeNull();
 
     act(() => {
@@ -32,7 +32,7 @@ describe("SortContext", () => {
       result.current.resetSort();
     });
 
-    expect(result.current.sortBy).toBe("");
+    expect(result.current.sortBy).toBeNull();
     expect(result.current.sortDirection).toBeNull();
   });
 });

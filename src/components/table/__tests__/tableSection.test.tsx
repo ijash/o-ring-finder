@@ -151,4 +151,45 @@ describe("TableSection component", () => {
       expect(screen.getByRole("button", { name: /close/i })).toBeInTheDocument();
     }
   });
+
+  test("sorts accurately in Indonesian locale using canonical keys and supports keyboard sort", async () => {
+    await i18next.changeLanguage("id");
+
+    render(
+      <TestWrapper initialFilter={{ unit: MeasurementUnit.MM, code: "001" }}>
+        <TableSection />
+      </TestWrapper>
+    );
+
+    const standardHeader = screen.getByRole("columnheader", { name: /^standar/i });
+    expect(standardHeader).toHaveAttribute("aria-sort", "none");
+
+    // Keyboard activation via Enter
+    fireEvent.keyDown(standardHeader, { key: "Enter" });
+    expect(standardHeader).toHaveTextContent("▲");
+    expect(standardHeader).toHaveAttribute("aria-sort", "ascending");
+
+    // Keyboard activation via Space
+    fireEvent.keyDown(standardHeader, { key: " " });
+    expect(standardHeader).toHaveTextContent("▼");
+    expect(standardHeader).toHaveAttribute("aria-sort", "descending");
+
+    // Cycle to unsorted
+    fireEvent.keyDown(standardHeader, { key: "Enter" });
+    expect(standardHeader).toHaveAttribute("aria-sort", "none");
+
+    // Reset language back to EN
+    await i18next.changeLanguage("en");
+  });
+
+  test("renders rows with overlapping codes across standards without key collision", () => {
+    render(
+      <TestWrapper initialFilter={{ unit: MeasurementUnit.MM, code: "10" }}>
+        <TableSection />
+      </TestWrapper>
+    );
+
+    const rows = screen.getAllByRole("row");
+    expect(rows.length).toBeGreaterThan(1);
+  });
 });

@@ -43,4 +43,12 @@ describe("LanguageDropdown component", () => {
     fireEvent.click(enButton);
     expect(document.documentElement.lang).toBe("en");
   });
+
+  test("renders button with accessible aria-label", () => {
+    renderDropdown();
+
+    expect(
+      screen.getByRole("button", { name: /language/i })
+    ).toBeInTheDocument();
+  });
 });

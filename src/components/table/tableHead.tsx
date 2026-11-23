@@ -1,18 +1,23 @@
-import { useSort } from "contexts";
+import { TableHeadField, useSort } from "contexts";
 import React from "react";
 
+export interface TableHeadItem {
+  key: TableHeadField;
+  label: string;
+}
+
 interface Props {
-  headerData: string[];
+  headerItems: TableHeadItem[];
 }
 
 const tHeadStyle = "bg-dark";
 const thStyle = "bg-dark text-white ps-2 clickable";
 
-export const TableHead: React.FC<Props> = ({ headerData }) => {
+export const TableHead: React.FC<Props> = ({ headerItems }) => {
   const { sortBy, sortDirection, setSortBy, setSortDirection } = useSort();
 
-  const handleSort = (header: string) => {
-    if (sortBy === header) {
+  const handleSort = (field: TableHeadField) => {
+    if (sortBy === field) {
       setSortDirection(
         sortDirection === "asc"
           ? "desc"
@@ -21,32 +26,50 @@ export const TableHead: React.FC<Props> = ({ headerData }) => {
           : "asc"
       );
     } else {
-      setSortBy(header);
+      setSortBy(field);
       setSortDirection("asc");
     }
   };
-  const renderSortIcon = (header: string) => {
-    if (sortBy === header) {
+
+  const renderSortIcon = (field: TableHeadField) => {
+    if (sortBy === field) {
       const style = "bg-info";
-      if (sortDirection === "asc") return { direction: `▲`, style: style };
-      if (sortDirection === "desc") return { direction: `▼`, style: style };
+      if (sortDirection === "asc") return { direction: `▲`, style };
+      if (sortDirection === "desc") return { direction: `▼`, style };
     }
     return { direction: undefined, style: "" };
+  };
+
+  const getAriaSort = (field: TableHeadField): "ascending" | "descending" | "none" => {
+    if (sortBy === field) {
+      if (sortDirection === "asc") return "ascending";
+      if (sortDirection === "desc") return "descending";
+    }
+    return "none";
   };
 
   return (
     <thead>
       <tr className={tHeadStyle}>
-        {headerData.map((h: string) => {
-          const headerId = h.replace(/ /g, "").toLowerCase();
+        {headerItems.map((item) => {
+          const icon = renderSortIcon(item.key);
           return (
             <th
-              key={headerId}
-              className={`${renderSortIcon(headerId)?.style} ${thStyle}`}
-              onClick={() => handleSort(headerId)}
+              key={item.key}
+              className={`${icon.style} ${thStyle}`}
+              onClick={() => handleSort(item.key)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  handleSort(item.key);
+                }
+              }}
+              tabIndex={0}
+              aria-sort={getAriaSort(item.key)}
+              role="columnheader"
             >
-              {h}
-              {renderSortIcon(headerId)?.direction}
+              {item.label}
+              {icon.direction}
             </th>
           );
         })}
@@ -54,3 +77,4 @@ export const TableHead: React.FC<Props> = ({ headerData }) => {
     </thead>
   );
 };
+

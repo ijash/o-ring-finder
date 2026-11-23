@@ -1,61 +1,67 @@
 import { DataRepresentation } from "data";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { getElementWidth } from "utils";
 import { ProductSearch } from "./productSearch";
 import RingVisualization from "./visualization";
+
 interface ViewportDimensions {
   width: number;
   height: number;
 }
 
 const HEIGHT_TO_WIDTH_RATIO = 0.4;
-const CONTAINER_ID = "visualContainer";
 const SECTION_STYLE_CLASS = "h3 text-center mt-3";
-
-const useViewportDimensions = (containerId: string) => {
-  const [dimensions, setDimensions] = useState<ViewportDimensions>({
-    width: 0,
-    height: 0,
-  });
-
-  const updateDimensions = useCallback(() => {
-    const containerWidth = getElementWidth(containerId);
-    setDimensions({
-      width: containerWidth,
-      height: containerWidth * HEIGHT_TO_WIDTH_RATIO,
-    });
-  }, [containerId]);
-
-  useEffect(() => {
-    updateDimensions();
-    window.addEventListener("resize", updateDimensions);
-    return () => window.removeEventListener("resize", updateDimensions);
-  }, [updateDimensions]);
-
-  return dimensions;
-};
 
 const ModalContent: React.FC<{ ringDimensions: DataRepresentation }> = ({
   ringDimensions,
 }) => {
   const { t } = useTranslation("global");
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [viewportDimensions, setViewportDimensions] = useState<ViewportDimensions>({
+    width: 0,
+    height: 0,
+  });
 
-  const viewportDimensions = useViewportDimensions(CONTAINER_ID);
+  useEffect(() => {
+    const element = containerRef.current;
+    if (!element) return;
 
-  if (!viewportDimensions.width) {
-    return <div id={CONTAINER_ID}>Loading...</div>;
-  }
+    const measure = (w: number) => {
+      if (w > 0) {
+        setViewportDimensions({
+          width: w,
+          height: w * HEIGHT_TO_WIDTH_RATIO,
+        });
+      }
+    };
+
+    const initialWidth = element.clientWidth || element.getBoundingClientRect().width;
+    measure(initialWidth);
+
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const width = entry.contentRect?.width || entry.target.clientWidth;
+        measure(width);
+      }
+    });
+
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div>
       <div id="modalVisualization">
-        <div className={SECTION_STYLE_CLASS} id={CONTAINER_ID}>
+        <div ref={containerRef} className={SECTION_STYLE_CLASS}>
           <h4 className="h3 text-center">{t("modal.visualization")}</h4>
-          <RingVisualization
-            ringDimensions={ringDimensions}
-            dimensions={viewportDimensions}
-          />
+          {viewportDimensions.width > 0 ? (
+            <RingVisualization
+              ringDimensions={ringDimensions}
+              dimensions={viewportDimensions}
+            />
+          ) : (
+            <div>{t("modal.loading")}</div>
+          )}
         </div>
       </div>
 
@@ -103,3 +109,4 @@ const ModalContent: React.FC<{ ringDimensions: DataRepresentation }> = ({
 };
 
 export default ModalContent;
+

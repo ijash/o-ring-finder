@@ -83,6 +83,7 @@
         "webSearch": "Pencarian web",
         "marketPlace": "Lokapasar",
         "eCommerceWeb": "E-Commerce",
-        "close": "Tutup"
+        "close": "Tutup",
+        "loading": "Memuat..."
     }
 }

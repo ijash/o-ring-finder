@@ -1,11 +1,12 @@
 import React, { createContext, useContext, useMemo, useState } from "react";
 
 export type SortDirection = "asc" | "desc" | null;
+export type TableHeadField = "standard" | "code" | "id" | "od" | "cs";
 
 interface SortContextProps {
-  sortBy: string;
+  sortBy: TableHeadField | null;
   sortDirection: SortDirection;
-  setSortBy: (sortBy: string) => void;
+  setSortBy: (sortBy: TableHeadField | null) => void;
   setSortDirection: (sortDirection: SortDirection) => void;
   resetSort: () => void;
 }
@@ -17,11 +18,11 @@ interface SortProviderProps {
 }
 
 export const SortProvider: React.FC<SortProviderProps> = ({ children }) => {
-  const [sortBy, setSortBy] = useState<string>("");
+  const [sortBy, setSortBy] = useState<TableHeadField | null>(null);
   const [sortDirection, setSortDirection] = useState<SortDirection>(null);
 
   const resetSort = () => {
-    setSortBy("");
+    setSortBy(null);
     setSortDirection(null);
   };
 

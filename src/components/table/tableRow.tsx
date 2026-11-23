@@ -1,7 +1,7 @@
 import CustomModal from "components/modal/modal";
 import { useSort } from "contexts";
 import { DataRepresentation, IDataFilter, Standard } from "data";
-import React, { useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
 
 interface props {
@@ -35,75 +35,75 @@ export const TableRowsComponent: React.FC<props> = ({ data, filter }) => {
   const { sortBy, sortDirection } = useSort();
   const [showModal, setShowModal] = useState(false);
   const [modalData, setModalData] = useState<DataRepresentation | null>(null);
+
   const handleShowModal = (rowData: DataRepresentation) => {
     setModalData(rowData);
     setShowModal(true);
   };
 
-  const handleCloseModal = () => {
+  const handleCloseModal = useCallback(() => {
     setShowModal(false);
     setModalData(null);
-  };
+  }, []);
 
-  const filteredData = filter
-    ? data.filter((row) => {
-        if (filter.minCs && row.cs < filter.minCs) return false;
-        if (filter.maxCs && row.cs > filter.maxCs) return false;
-        if (filter.minId && row.id < filter.minId) return false;
-        if (filter.maxId && row.id > filter.maxId) return false;
-        if (filter.minOd && row.od < filter.minOd) return false;
-        if (filter.maxOd && row.od > filter.maxOd) return false;
-        if (
-          filter.code &&
-          !row.code.toLowerCase().includes(filter.code.toLowerCase())
-        )
-          return false;
-        if (
-          filter.standard &&
-          !filter.standard.includes(row.standard)
-        )
-          return false;
-        return true;
-      })
-    : [...data];
+  const filteredData = useMemo(() => {
+    if (!filter) return [...data];
+    return data.filter((row) => {
+      if (filter.minCs !== undefined && row.cs < filter.minCs) return false;
+      if (filter.maxCs !== undefined && row.cs > filter.maxCs) return false;
+      if (filter.minId !== undefined && row.id < filter.minId) return false;
+      if (filter.maxId !== undefined && row.id > filter.maxId) return false;
+      if (filter.minOd !== undefined && row.od < filter.minOd) return false;
+      if (filter.maxOd !== undefined && row.od > filter.maxOd) return false;
+      if (
+        filter.code &&
+        !row.code.toLowerCase().includes(filter.code.toLowerCase())
+      )
+        return false;
+      if (
+        filter.standard &&
+        !filter.standard.includes(row.standard)
+      )
+        return false;
+      return true;
+    });
+  }, [data, filter]);
 
-  const rows = [...filteredData].sort((a, b) => {
-    if (sortBy && sortDirection !== null) {
-      const aValue = a[sortBy as keyof DataRepresentation];
-      const bValue = b[sortBy as keyof DataRepresentation];
+  const rows = useMemo(() => {
+    if (!sortBy || sortDirection === null) return filteredData;
+    return [...filteredData].sort((a, b) => {
+      const aValue = a[sortBy];
+      const bValue = b[sortBy];
       if (aValue < bValue) return sortDirection === "asc" ? -1 : 1;
       if (aValue > bValue) return sortDirection === "asc" ? 1 : -1;
-    }
-    return 0;
-  });
+      return 0;
+    });
+  }, [filteredData, sortBy, sortDirection]);
 
   return (
     <>
-      {rows.map((row) => {
-        const result = (
-          <tr
-            vocab="https://schema.org/"
-            typeof="Product"
-            key={row.code}
-            onClick={() => handleShowModal(row)}
-            style={{ cursor: "pointer" }}
+      {rows.map((row) => (
+        <tr
+          vocab="https://schema.org/"
+          typeof="Product"
+          key={`${row.standard}-${row.code}`}
+          onClick={() => handleShowModal(row)}
+          style={{ cursor: "pointer" }}
+        >
+          <td
+            className={`${rowStyle} ${specialStyle.standard(row.standard)}`}
+            property="brand"
           >
-            <td
-              className={`${rowStyle} ${specialStyle.standard(row.standard)}`}
-              property="brand"
-            >
-              {row.standard}
-            </td>
-            <td className={`${rowStyle} ${specialStyle.code}`} property="size">
-              {row.code}
-            </td>
-            <td className={`${rowStyle}`}>{row.id}</td>
-            <td className={`${rowStyle}`}>{row.od}</td>
-            <td className={`${rowStyle}`}>{row.cs}</td>
-          </tr>
-        );
-        return result;
-      })}
+            {row.standard}
+          </td>
+          <td className={`${rowStyle} ${specialStyle.code}`} property="size">
+            {row.code}
+          </td>
+          <td className={`${rowStyle}`}>{row.id}</td>
+          <td className={`${rowStyle}`}>{row.od}</td>
+          <td className={`${rowStyle}`}>{row.cs}</td>
+        </tr>
+      ))}
       {showModal &&
         // https://react.dev/reference/react-dom/createPortal
         createPortal(
@@ -117,3 +117,4 @@ export const TableRowsComponent: React.FC<props> = ({ data, filter }) => {
     </>
   );
 };
+

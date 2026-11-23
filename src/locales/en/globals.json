@@ -83,6 +83,7 @@
         "webSearch": "Web Search",
         "marketPlace": "Marketplace",
         "eCommerceWeb": "E-Commerce",
-        "close": "Close"
+        "close": "Close",
+        "loading": "Loading..."
     }
 }

@@ -149,4 +149,16 @@ describe("CustomModal component", () => {
     fireEvent.keyDown(window, { key: "Escape" });
     expect(handleClose).toHaveBeenCalledTimes(1);
   });
+
+  test("renders localized loading state when dimensions are unmeasured", () => {
+    Object.defineProperty(HTMLElement.prototype, "clientWidth", {
+      configurable: true,
+      value: 0,
+    });
+
+    const handleClose = vi.fn();
+    renderModal({ show: true, handleClose, rowData: sampleRowData });
+
+    expect(screen.getByText("Loading...")).toBeInTheDocument();
+  });
 });

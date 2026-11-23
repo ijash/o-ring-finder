@@ -18,9 +18,11 @@
  */
 
 import { readFileSync } from "node:fs";
-import { resolve } from "node:path";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 
-const REPO_ROOT = resolve(import.meta.dirname, "..");
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const REPO_ROOT = resolve(__dirname, "..");
 const EN_PATH = resolve(REPO_ROOT, "src/locales/en/globals.json");
 const ID_PATH = resolve(REPO_ROOT, "src/locales/id/globals.json");
 

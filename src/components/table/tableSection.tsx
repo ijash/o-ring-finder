@@ -1,18 +1,30 @@
 import { TableHead, TableRowsComponent } from "components";
-import { SortProvider, useFilter } from "contexts";
+import { SortProvider, TableHeadField, useFilter } from "contexts";
 import { TABLE_HEADERS, getAllORingData } from "data";
-import React from "react";
+import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
-
-type TableHeadField = "standard" | "code" | "id" | "od" | "cs";
 
 export const TableSection: React.FC = () => {
   const { t } = useTranslation("global");
   const { filter } = useFilter();
-  const oRingData = getAllORingData(filter.unit);
-  const translatedTableHead = TABLE_HEADERS.map((header) =>
-    t(`table.tableHead.${header.toLowerCase() as TableHeadField}`)
+
+  const oRingData = useMemo(
+    () => getAllORingData(filter.unit),
+    [filter.unit]
   );
+
+  const headerItems = useMemo(
+    () =>
+      TABLE_HEADERS.map((header) => {
+        const key = header.toLowerCase() as TableHeadField;
+        return {
+          key,
+          label: t(`table.tableHead.${key}`),
+        };
+      }),
+    [t]
+  );
+
   const tableStyle = `
     table
     table-hover
@@ -40,7 +52,7 @@ export const TableSection: React.FC = () => {
             </div>
           </caption>
 
-          <TableHead headerData={translatedTableHead} />
+          <TableHead headerItems={headerItems} />
 
           <tbody className="table-group-divider">
             <TableRowsComponent
@@ -53,3 +65,4 @@ export const TableSection: React.FC = () => {
     </SortProvider>
   );
 };
+
