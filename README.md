@@ -1,8 +1,8 @@
 # O-Ring Finder — AS568, JIS & Metric O-Ring Size Lookup Tool
 
-[](https://ijash.github.io/o-ring-finder/)
-[](https://github.com/ijash/o-ring-finder/releases)
-[License: GPL-3.0](https://www.google.com/search?q=./LICENSE)
+[![Live Demo](https://img.shields.io/badge/live-GitHub%20Pages-brightgreen.svg)](https://ijash.github.io/o-ring-finder/)
+[![Version](https://img.shields.io/badge/version-3.2.0-blue.svg)](https://github.com/ijash/o-ring-finder/releases)
+[![License: GPL-3.0](https://img.shields.io/badge/license-GPL--3.0-orange.svg)](./LICENSE)
 
 > **Open the live tool directly:** **[https://ijash.github.io/o-ring-finder/](https://ijash.github.io/o-ring-finder/)**
 
@@ -30,11 +30,13 @@ No installation or account required—use the live web app on desktop or mobile:
 ## Key Features
 
 * **Precision Range Filtering:** Filter O-rings simultaneously by `ID`, `OD`, and `CS` min/max ranges or search directly by size code.
+* **URL Deep-Linking & Shareable State:** Bookmark or share exact filter configurations via query parameters (e.g. `?code=010&unit=inch`), automatically synchronized with browser history.
 * **Instant Metric ↔ Imperial Conversion:** Switch seamlessly between **millimeters (`mm`)** and **inches (`″`)** with deterministic 3-decimal precision (`1 in = 25.4 mm`).
 * **Interactive Dimension Visualizer:** Click any O-ring row to inspect a proportional SVG diagram displaying `OD`, `ID`, and `CS` callouts alongside full specs.
 * **Quick Marketplace Lookup:** One-click product search links (Shopee, Tokopedia, Marco Rubber) pre-filled with the selected O-ring standard and dimensions.
-* **Bilingual Interface (EN / ID):** Full English and Bahasa Indonesia (*alat pencari & tabel ukuran O-ring AS568, JIS, Metrik*) support with automatic browser language detection.
-* **Fast, Lightweight & Accessible:** Built on static JSON catalogs, keyboard-accessible sorting (`aria-sort`), Escape-to-close modals, and zero server dependencies.
+* **Bilingual Sizing Guide & FAQ (EN / ID):** Collapsible O-ring reference guide explaining AS568, JIS, and Metric differences, measuring techniques, and unit conversion formulas with 100% bilingual parity.
+* **SEO & Rich Structured Data:** Valid Schema.org JSON-LD structured data (`WebApplication`, `Dataset`, `FAQPage`), complete Open Graph / Twitter Card social previews, sitemap, and semantic landmarks.
+* **Fast, Lightweight & Accessible:** Built on static JSON catalogs, zero external icon dependencies (inline SVGs), keyboard-accessible sorting (`aria-sort`), Escape-to-close modals, and zero server dependencies.
 
 ## Tech Stack
 
@@ -43,7 +45,7 @@ No installation or account required—use the live web app on desktop or mobile:
 | **UI & Language** | React 19, TypeScript 7 (strict mode) |
 | **Build & Dev Server** | Vite 8 |
 | **Testing & Coverage** | Vitest 5, React Testing Library, `@vitest/coverage-v8` |
-| **Styling & Icons** | Bootstrap 5.3, SCSS, FontAwesome 7 |
+| **Styling & Icons** | Bootstrap 5.3 (modular SCSS), zero-dependency inline SVGs |
 | **Internationalization** | `i18next`, `react-i18next`, `i18next-browser-languagedetector` |
 | **Package Manager & Hosting** | `pnpm` (`blockExoticSubdeps: true`), GitHub Pages (`gh-pages`) |
 
@@ -51,21 +53,23 @@ No installation or account required—use the live web app on desktop or mobile:
 
 ```text
 o-ring-finder/
-├── index.html                  # Vite entry point & SEO metadata
-├── public/                     # Static assets (favicon, manifest.json, robots.txt)
+├── index.html                  # Vite entry point, SEO metadata & JSON-LD graph
+├── public/                     # Static assets (og-image.png, sitemap.xml, robots.txt, favicon)
 ├── scripts/                    # Reusable automation & quality-gate scripts
 │   ├── audit-codebase.mjs      # Type-safety & hygiene audit
 │   ├── bump-version.mjs        # Safe SemVer bumper (patch / minor)
+│   ├── check-bundle-size.mjs   # Automated bundle size budget validator
 │   ├── check-i18n-parity.mjs   # EN ↔ ID translation parity validator
 │   ├── test-coverage.sh        # Vitest coverage runner
-│   └── verify-gates.sh         # Full gate: tsc + i18n + vitest + build
+│   └── verify-gates.sh         # Full gate: tsc + i18n + vitest + build + bundle budget
 └── src/
-    ├── components/             # UI components (header, input, table, modal, footer, analytics)
+    ├── components/             # UI components (header, input, table, modal, faq, footer, analytics)
+    │   └── faq/                # Collapsible bilingual sizing guide & FAQ
     ├── contexts/               # FilterContext (useFilter) & SortContext (useSort)
-    ├── css/                    # SCSS design tokens & custom styles
+    ├── css/                    # SCSS design tokens & modular styles
     ├── data/                   # Static JSON catalogs (as568, jis, metric) + pure accessors
     ├── locales/                # Bilingual EN & ID translation files
-    └── utils/                  # Native typed helpers (debounce, site metadata)
+    └── utils/                  # Native typed helpers (debounce, names, urlParams)
 ```
 
 ## Local Development
@@ -118,6 +122,22 @@ Licensed under the **[GNU General Public License v3.0 (GPL-3.0)](https://www.goo
 ## Changelog
 
 ```text
+v3.2.0 (2026-11-23)
+- Implement URL query parameter deep-linking and replaceState sync (?code=...&unit=...)
+- Embed Schema.org JSON-LD structured data graph (WebApplication, Dataset, FAQPage) in index.html
+- Add canonical link, hreflang alternates (en, id, x-default), Open Graph, Twitter cards, and og-image.png
+- Remove invalid per-row RDFa attributes from catalog table rows
+- Add collapsible bilingual O-ring sizing reference and FAQ guide above footer with 100% i18n parity
+- Restructure semantic landmarks as siblings (header, main, footer) and fix invalid footer nesting
+- Add sitemap.xml, declare sitemap in robots.txt, and add rich noscript summary
+
+v3.1.0 (2026-11-23)
+- Lightweight performance optimizations: eliminate 80 kB Bootstrap JS and 4 FontAwesome packages
+- Implement zero-dependency inline SVG icons and native React state language dropdown
+- Optimize Bootstrap SCSS with selective module imports preserving 100% visual styling
+- Apply React 19 useDeferredValue for smooth catalog table rendering and code-split detail modal
+- Add reusable scripts/check-bundle-size.mjs and enforce automated bundle size budget in verify-gates.sh
+
 v3.0.3 (2026-11-23)
 - Sync unit select dropdown with filter.unit when clicking Clear in inch mode
 - Split input handlers into strictly typed numeric, text, and unit handlers
