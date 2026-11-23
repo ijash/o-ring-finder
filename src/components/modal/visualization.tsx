@@ -1,31 +1,16 @@
+import { useTheme } from "contexts";
 import { DataRepresentation } from "data";
 import React from "react";
 
-interface ViewportDimensions {
+export interface ViewportDimensions {
   width: number;
   height: number;
 }
 
-interface VisualizationProps {
+export interface VisualizationProps {
   ringDimensions: DataRepresentation;
   dimensions: ViewportDimensions;
 }
-
-const GRADIENT = {
-  ID: "ringGradient",
-  STOPS: {
-    START: 0,
-    QUARTER: 25,
-    HALF: 50,
-    THREE_QUARTERS: 75,
-    END: 100,
-  },
-  COLORS: {
-    PRIMARY: "black",
-    SECONDARY: "#25282B",
-    TERTIARY: "#53595F",
-  },
-} as const;
 
 const RING = {
   OPTIMAL_RATIO: 0.86,
@@ -33,24 +18,21 @@ const RING = {
   MASK_ID: "ringMask",
 } as const;
 
-const DIMENSION_LINE = {
-  STROKE_COLOR: " #3388B9 ",
-  STROKE_WIDTH: 1.1,
-  DASH_ARRAY: 2,
-} as const;
-
-const RING_SIZE_LABEL = {
-  COLOR: " #336E90 ",
-  STROKE_WIDTH: 0.5,
-  FONT_SIZE: 11,
-  FONT_FAMILY: "monospace,Ubuntu, Helvetica, Arial, sans-serif",
-  FONT_VARIANT: "normal",
-} as const;
-
-const RingVisualization: React.FC<VisualizationProps> = ({
+export const RingVisualization: React.FC<VisualizationProps> = ({
   ringDimensions,
   dimensions,
 }) => {
+  let isDark = false;
+  try {
+    const themeContext = useTheme();
+    isDark = themeContext.isDark;
+  } catch {
+    // ponytail: fallback to DOM attribute when rendered outside ThemeProvider
+    isDark =
+      typeof document !== "undefined" &&
+      document.documentElement.getAttribute("data-bs-theme") === "dark";
+  }
+
   const centerX = dimensions.width / 2;
   const centerY = dimensions.height / 2;
 
@@ -61,7 +43,7 @@ const RingVisualization: React.FC<VisualizationProps> = ({
   const innerDiameter = ringDimensions.id * scaleFactor;
   const outerDiameter = ringDimensions.od * scaleFactor;
 
-  // Helper function to calculate gradient offsets
+  // Helper function to calculate toroidal gradient offsets
   const calculateGradientOffset = (percentage: number) =>
     ((innerDiameter + (outerDiameter - innerDiameter) * (percentage / 100)) /
       outerDiameter) *
@@ -70,7 +52,6 @@ const RingVisualization: React.FC<VisualizationProps> = ({
   // Calculate dimension lines coordinates
   const getLineCoordinates = () => {
     const margin = 20;
-    // const lineLength = 40;
 
     return {
       od: {
@@ -126,40 +107,91 @@ const RingVisualization: React.FC<VisualizationProps> = ({
 
   const lines = getLineCoordinates();
   const labelMargins = 10;
+
+  // Colors adapted for light vs dark theme
+  const colors = {
+    background: isDark
+      ? "linear-gradient(rgb(30, 41, 59), rgb(15, 23, 42))"
+      : "linear-gradient(rgb(248, 250, 252), rgb(203, 213, 225))",
+    dotColor: isDark
+      ? "rgba(148, 163, 184, 0.25)"
+      : "rgba(100, 116, 139, 0.25)",
+    glowCenter: isDark ? "#38bdf8" : "#93c5fd",
+    glowOpacity: isDark ? 0.12 : 0.2,
+    dimensionLine: isDark ? "#54b2e9" : "#3388B9",
+    dimensionLabel: isDark ? "#79c7f7" : "#1e5b80",
+    ringStroke: isDark ? "#0f172a" : "#000000",
+  };
+
   return (
     <svg
       width={dimensions.width}
       height={dimensions.height}
-      className="shadow-sm rounded-1 border border-dark"
+      className="shadow-sm rounded-1 border border-secondary-subtle"
       style={{
-        background: "linear-gradient(#F6F7F8, rgb(191, 195, 199))",
+        background: colors.background,
       }}
     >
       <defs>
-        <radialGradient id={GRADIENT.ID}>
+        {/* Subtle dot-grid backdrop */}
+        <pattern
+          id="dotGrid"
+          width="16"
+          height="16"
+          patternUnits="userSpaceOnUse"
+        >
+          <circle cx="8" cy="8" r="1" fill={colors.dotColor} />
+        </pattern>
+
+        {/* Soft radial ambient glow behind O-ring */}
+        <radialGradient id="ambientGlow" cx="50%" cy="50%" r="50%">
           <stop
-            offset={`${GRADIENT.STOPS.START}%`}
-            stopColor={GRADIENT.COLORS.PRIMARY}
+            offset="0%"
+            stopColor={colors.glowCenter}
+            stopOpacity={colors.glowOpacity}
           />
-          <stop
-            offset={`${calculateGradientOffset(GRADIENT.STOPS.QUARTER)}%`}
-            stopColor={GRADIENT.COLORS.SECONDARY}
-          />
-          <stop
-            offset={`${calculateGradientOffset(GRADIENT.STOPS.HALF)}%`}
-            stopColor={GRADIENT.COLORS.TERTIARY}
-          />
-          <stop
-            offset={`${calculateGradientOffset(
-              GRADIENT.STOPS.THREE_QUARTERS
-            )}%`}
-            stopColor={GRADIENT.COLORS.SECONDARY}
-          />
-          <stop
-            offset={`${GRADIENT.STOPS.END}%`}
-            stopColor={GRADIENT.COLORS.PRIMARY}
-          />
+          <stop offset="100%" stopColor="#000000" stopOpacity="0" />
         </radialGradient>
+
+        {/* Realistic 3D Toroidal Rubber Gradient */}
+        <radialGradient id="ringGradient" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#111315" />
+          <stop
+            offset={`${calculateGradientOffset(20)}%`}
+            stopColor="#1c2024"
+          />
+          <stop
+            offset={`${calculateGradientOffset(45)}%`}
+            stopColor="#555e68"
+          />
+          <stop
+            offset={`${calculateGradientOffset(60)}%`}
+            stopColor="#6c7784"
+          />
+          <stop
+            offset={`${calculateGradientOffset(80)}%`}
+            stopColor="#202428"
+          />
+          <stop offset="100%" stopColor="#0b0d0e" />
+        </radialGradient>
+
+        {/* Drop shadow filter for 3D depth */}
+        <filter
+          id="ringDropShadow"
+          x="-15%"
+          y="-15%"
+          width="130%"
+          height="130%"
+        >
+          <feDropShadow
+            dx="0"
+            dy="3"
+            stdDeviation="5"
+            floodColor="#000000"
+            floodOpacity={isDark ? "0.65" : "0.35"}
+          />
+        </filter>
+
         <marker
           id="arrow"
           viewBox="0 0 10 10"
@@ -168,26 +200,34 @@ const RingVisualization: React.FC<VisualizationProps> = ({
           markerWidth="5"
           markerHeight="5"
           orient="auto-start-reverse"
-          fill={DIMENSION_LINE.STROKE_COLOR}
+          fill={colors.dimensionLine}
         >
           <path d="M 0 0 L 10 5 L 0 10 z" />
         </marker>
       </defs>
 
+      {/* Dot-grid background layer */}
+      <rect width="100%" height="100%" fill="url(#dotGrid)" />
+
+      {/* Ambient glow centered on ring */}
+      <rect width="100%" height="100%" fill="url(#ambientGlow)" />
+
+      {/* Ring cutout mask */}
       <mask id={RING.MASK_ID} maskContentUnits="userSpaceOnUse">
         <circle cx={centerX} cy={centerY} r={outerDiameter / 2} fill="white" />
         <circle cx={centerX} cy={centerY} r={innerDiameter / 2} fill="black" />
       </mask>
 
-      {/* Main ring */}
+      {/* Main 3D ring with shadow and gradient */}
       <circle
         cx={centerX}
         cy={centerY}
         r={outerDiameter / 2}
-        fill={`url(#${GRADIENT.ID})`}
-        stroke="black"
+        fill="url(#ringGradient)"
+        stroke={colors.ringStroke}
         strokeWidth={RING.STROKE_WIDTH}
         mask={`url(#${RING.MASK_ID})`}
+        filter="url(#ringDropShadow)"
       />
 
       {/* Dimension lines */}
@@ -195,50 +235,50 @@ const RingVisualization: React.FC<VisualizationProps> = ({
         {/* OD lines */}
         <line
           {...lines.od.arrow}
-          stroke={DIMENSION_LINE.STROKE_COLOR}
-          strokeWidth={DIMENSION_LINE.STROKE_WIDTH}
+          stroke={colors.dimensionLine}
+          strokeWidth={1.1}
           markerEnd="url(#arrow)"
           markerStart="url(#arrow)"
         />
         <line
           {...lines.od.upperDash}
-          stroke={DIMENSION_LINE.STROKE_COLOR}
-          strokeWidth={DIMENSION_LINE.STROKE_WIDTH}
-          strokeDasharray={DIMENSION_LINE.DASH_ARRAY}
+          stroke={colors.dimensionLine}
+          strokeWidth={1.1}
+          strokeDasharray={2}
         />
         <line
           {...lines.od.lowerDash}
-          stroke={DIMENSION_LINE.STROKE_COLOR}
-          strokeWidth={DIMENSION_LINE.STROKE_WIDTH}
-          strokeDasharray={DIMENSION_LINE.DASH_ARRAY}
+          stroke={colors.dimensionLine}
+          strokeWidth={1.1}
+          strokeDasharray={2}
         />
 
         {/* ID lines */}
         <line
           {...lines.id.arrow}
-          stroke={DIMENSION_LINE.STROKE_COLOR}
-          strokeWidth={DIMENSION_LINE.STROKE_WIDTH}
+          stroke={colors.dimensionLine}
+          strokeWidth={1.1}
           markerEnd="url(#arrow)"
           markerStart="url(#arrow)"
         />
         <line
           {...lines.id.upperDash}
-          stroke={DIMENSION_LINE.STROKE_COLOR}
-          strokeWidth={DIMENSION_LINE.STROKE_WIDTH}
-          strokeDasharray={DIMENSION_LINE.DASH_ARRAY}
+          stroke={colors.dimensionLine}
+          strokeWidth={1.1}
+          strokeDasharray={2}
         />
         <line
           {...lines.id.lowerDash}
-          stroke={DIMENSION_LINE.STROKE_COLOR}
-          strokeWidth={DIMENSION_LINE.STROKE_WIDTH}
-          strokeDasharray={DIMENSION_LINE.DASH_ARRAY}
+          stroke={colors.dimensionLine}
+          strokeWidth={1.1}
+          strokeDasharray={2}
         />
 
         {/* CS line */}
         <line
           {...lines.cs.arrow}
-          stroke={DIMENSION_LINE.STROKE_COLOR}
-          strokeWidth={DIMENSION_LINE.STROKE_WIDTH}
+          stroke={colors.dimensionLine}
+          strokeWidth={1.1}
           markerEnd="url(#arrow)"
           markerStart="url(#arrow)"
         />
@@ -251,10 +291,9 @@ const RingVisualization: React.FC<VisualizationProps> = ({
           y={centerY}
           textAnchor="end"
           dominantBaseline="middle"
-          fill={RING_SIZE_LABEL.COLOR}
-          fontSize={RING_SIZE_LABEL.FONT_SIZE}
-          fontFamily={RING_SIZE_LABEL.FONT_FAMILY}
-          fontVariant={RING_SIZE_LABEL.FONT_VARIANT}
+          fill={colors.dimensionLabel}
+          fontSize={11}
+          fontFamily="monospace,Ubuntu, Helvetica, Arial, sans-serif"
         >
           <tspan x={lines.od.arrow.x1 - labelMargins} dy="-3">
             OD
@@ -268,10 +307,9 @@ const RingVisualization: React.FC<VisualizationProps> = ({
           y={centerY}
           textAnchor="start"
           dominantBaseline="middle"
-          fill={RING_SIZE_LABEL.COLOR}
-          fontSize={RING_SIZE_LABEL.FONT_SIZE}
-          fontFamily={RING_SIZE_LABEL.FONT_FAMILY}
-          fontVariant={RING_SIZE_LABEL.FONT_VARIANT}
+          fill={colors.dimensionLabel}
+          fontSize={11}
+          fontFamily="monospace,Ubuntu, Helvetica, Arial, sans-serif"
         >
           <tspan x={lines.id.arrow.x1 + labelMargins} dy="-3">
             ID
@@ -285,10 +323,9 @@ const RingVisualization: React.FC<VisualizationProps> = ({
           y={(lines.cs.arrow.y2 - lines.cs.arrow.y1) / 2 + lines.cs.arrow.y1}
           textAnchor="start"
           dominantBaseline="middle"
-          fill={RING_SIZE_LABEL.COLOR}
-          fontSize={RING_SIZE_LABEL.FONT_SIZE}
-          fontFamily={RING_SIZE_LABEL.FONT_FAMILY}
-          fontVariant={RING_SIZE_LABEL.FONT_VARIANT}
+          fill={colors.dimensionLabel}
+          fontSize={11}
+          fontFamily="monospace,Ubuntu, Helvetica, Arial, sans-serif"
         >
           <tspan x={lines.cs.arrow.x1 + labelMargins} dy="-10">
             CS
@@ -303,3 +340,4 @@ const RingVisualization: React.FC<VisualizationProps> = ({
 };
 
 export default RingVisualization;
+

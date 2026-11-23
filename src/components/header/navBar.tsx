@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import LanguageDropdown from "./languageDropdown";
+import ThemeToggle from "./themeToggle";
 
 export function NavBar() {
   const { t } = useTranslation("global");
@@ -36,7 +37,10 @@ export function NavBar() {
               {t("header.title")}
             </button>
           </h2>
-          <LanguageDropdown />
+          <div className="d-flex align-items-center">
+            <ThemeToggle />
+            <LanguageDropdown />
+          </div>
         </div>
       </nav>
     </div>

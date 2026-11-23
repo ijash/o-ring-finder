@@ -92,6 +92,30 @@ a.ck-deco-none {
   }
 }
 
+[data-bs-theme="dark"] {
+  .clickable:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .table-hover > tbody > tr:hover > * {
+    --bs-table-hover-bg: rgba(255, 255, 255, 0.075);
+  }
+
+  .text-info {
+    color: #54b2e9 !important;
+  }
+
+  .border-dark {
+    border-color: var(--bs-border-color) !important;
+  }
+
+  .form-control:focus,
+  .form-select:focus {
+    border-color: #54b2e9;
+    box-shadow: 0 0 0 0.25rem rgba(47, 164, 231, 0.25);
+  }
+}
+
 .bg-dark-transparent {
   background-color: rgba(0, 0, 0, 0.6);
 }

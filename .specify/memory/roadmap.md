@@ -6,4 +6,4 @@ agents do not modify this (except grammar and marking it done.)
 - [x] organize and tidy up foldering, architectures and codes so it follows best practices
 - [x] optimize for lightweight performance, yet not changing the behavior of user experience.
 - [x] optimize for SEO . instal this skill: https://github.com/AsyrafHussin/agent-skills/tree/main/skills/seo-best-practices and follow it. 
-- dark and light theme
+- [x] dark and light theme

@@ -1,5 +1,11 @@
 import { render } from "@testing-library/react";
-import { IconCircle, IconEraser, IconLanguage } from "components/common/icons";
+import {
+  IconCircle,
+  IconEraser,
+  IconLanguage,
+  IconMoon,
+  IconSun,
+} from "components/common/icons";
 import { describe, expect, test } from "vitest";
 
 describe("Inline SVG Icons", () => {
@@ -26,6 +32,24 @@ describe("Inline SVG Icons", () => {
     const svg = container.querySelector("svg");
     expect(svg).toBeInTheDocument();
     expect(svg).toHaveAttribute("viewBox", "0 0 576 512");
+    expect(svg).toHaveAttribute("fill", "currentColor");
+    expect(svg).toHaveAttribute("aria-hidden", "true");
+  });
+
+  test("renders IconSun with correct SVG viewBox and attributes", () => {
+    const { container } = render(<IconSun data-testid="icon-sun" />);
+    const svg = container.querySelector("svg");
+    expect(svg).toBeInTheDocument();
+    expect(svg).toHaveAttribute("viewBox", "0 0 16 16");
+    expect(svg).toHaveAttribute("fill", "currentColor");
+    expect(svg).toHaveAttribute("aria-hidden", "true");
+  });
+
+  test("renders IconMoon with correct SVG viewBox and attributes", () => {
+    const { container } = render(<IconMoon data-testid="icon-moon" />);
+    const svg = container.querySelector("svg");
+    expect(svg).toBeInTheDocument();
+    expect(svg).toHaveAttribute("viewBox", "0 0 16 16");
     expect(svg).toHaveAttribute("fill", "currentColor");
     expect(svg).toHaveAttribute("aria-hidden", "true");
   });

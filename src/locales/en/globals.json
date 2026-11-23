@@ -105,5 +105,10 @@
             "question": "How do I convert between millimeters and inches?",
             "answer": "1 inch equals exactly 25.4 millimeters. To convert inches to millimeters, multiply by 25.4. To convert millimeters to inches, divide by 25.4 (or multiply by 0.03937)."
         }
+    },
+    "theme": {
+        "toggle": "Toggle color theme",
+        "toggleToDark": "Switch to dark mode",
+        "toggleToLight": "Switch to light mode"
     }
 }

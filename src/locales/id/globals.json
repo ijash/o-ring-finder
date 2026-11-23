@@ -105,5 +105,10 @@
             "question": "Bagaimana cara konversi ukuran antara milimeter dan inci?",
             "answer": "1 inci sama dengan tepat 25,4 milimeter. Untuk mengonversi inci ke milimeter, kalikan dengan 25,4. Untuk mengonversi milimeter ke inci, bagi dengan 25,4 (atau kalikan dengan 0,03937)."
         }
+    },
+    "theme": {
+        "toggle": "Ganti tema warna",
+        "toggleToDark": "Beralih ke mode gelap",
+        "toggleToLight": "Beralih ke mode terang"
     }
 }
