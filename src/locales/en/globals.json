@@ -68,7 +68,8 @@
         "issueDesc": "If you encounter any issues or would like to suggest new features, please post an issue on this ",
         "issueLinkName": "issue page",
         "contribDesc": "Feel free to contribute to this app.",
-        "version": "Version"
+        "version": "Version",
+        "offlineStatus": "Working Offline (Cached Catalog)"
     },
     "modal": {
         "visualization": "Visualization",

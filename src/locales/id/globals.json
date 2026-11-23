@@ -68,7 +68,8 @@
         "issueDesc": "Jika Anda menemukan masalah atau hanya ingin menyarankan fitur baru, silakan posting isu di ",
         "issueLinkName": "halaman isu",
         "contribDesc": "Silahkan jika ingin berkontribusi untuk app ini.",
-        "version": "Versi"
+        "version": "Versi",
+        "offlineStatus": "Mode Luring (Katalog Tersimpan)"
     },
     "modal": {
         "visualization": "Visualisasi",

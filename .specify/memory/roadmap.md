@@ -7,4 +7,4 @@ agents do not modify this (except grammar and marking it done.)
 - [x] optimize for lightweight performance, yet not changing the behavior of user experience.
 - [x] optimize for SEO . instal this skill: https://github.com/AsyrafHussin/agent-skills/tree/main/skills/seo-best-practices and follow it. 
 - [x] dark and light theme
-- offline capabilities using PWA
+- [x] offline capabilities using PWA
