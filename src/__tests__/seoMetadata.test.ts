@@ -49,6 +49,14 @@ describe("SEO Static Metadata & Structured Data", () => {
     const webApp = parsed["@graph"].find((item: { "@type": string }) => item["@type"] === "WebApplication");
     expect(webApp.potentialAction["@type"]).toBe("SearchAction");
     expect(webApp.potentialAction.target.urlTemplate).toContain("?code={search_term_string}");
+
+    const dataset = parsed["@graph"].find((item: { "@type": string }) => item["@type"] === "Dataset");
+    expect(dataset.license).toBe("https://www.gnu.org/licenses/gpl-3.0.html");
+    expect(dataset.creator).toEqual({
+      "@type": "Person",
+      name: "Ijash",
+      url: "https://github.com/ijash",
+    });
   });
 
   it("contains rich noscript content in index.html", () => {
