@@ -4,7 +4,22 @@
     <meta charset="utf-8" />
     <link rel="icon" href="/o-ring-finder/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#2fa4e7" />
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('oring_theme');
+          var theme = stored === 'dark' || stored === 'light'
+            ? stored
+            : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-bs-theme', theme);
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) {
+            meta.setAttribute('content', theme === 'dark' ? '#1a1d20' : '#2fa4e7');
+          }
+        } catch (e) {}
+      })();
+    </script>
     <title>O-Ring Size Chart &amp; Finder | AS568, JIS, Metric Sizes</title>
     <meta
       name="description"
@@ -107,8 +122,8 @@
       ]
     }
     </script>
-    <script type="module" crossorigin src="/o-ring-finder/assets/index-B1sAtMmO.js"></script>
-    <link rel="stylesheet" crossorigin href="/o-ring-finder/assets/index-DD2CNgol.css">
+    <script type="module" crossorigin src="/o-ring-finder/assets/index-CCHfklBN.js"></script>
+    <link rel="stylesheet" crossorigin href="/o-ring-finder/assets/index-DTRW5xnm.css">
   </head>
   <body>
     <noscript>
