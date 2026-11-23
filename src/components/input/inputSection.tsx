@@ -1,38 +1,36 @@
 import { debounce } from "utils";
-import React, { useCallback, useContext } from "react";
+import React, { useCallback } from "react";
 import { useTranslation } from "react-i18next";
 
 import oringSpec from "assets/img/oring-spec.jpg";
 
 import { LabelWrapper, StandardElementProps } from "components/common";
-import { FilterContext } from "components/context";
 import {
   ButtonInput,
   NumberInput,
   SelectInput,
   TextInput,
 } from "components/input/formInput";
+import { useFilter } from "contexts";
 import { IDataFilter, MeasurementUnit } from "data";
 
-interface props extends StandardElementProps {}
-
-export const InputSection: React.FC<props> = () => {
+export const InputSection: React.FC<StandardElementProps> = () => {
   const { t } = useTranslation("global");
 
-  const filterContext = useContext(FilterContext);
+  const { filter, setFilter } = useFilter();
 
   const updateContextDelay = 897; //milliseconds
   const setFilterDebounced = useCallback(
-    debounce((filter: IDataFilter) => {
-      filterContext.setFilter(filter);
+    debounce((nextFilter: IDataFilter) => {
+      setFilter(nextFilter);
     }, updateContextDelay),
-    [filterContext, updateContextDelay]
+    [setFilter, updateContextDelay]
   );
 
   const handleFilter = (filterName: keyof IDataFilter) => {
     return (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
       const filterValue = {
-        ...filterContext.filter,
+        ...filter,
         [filterName]: event.target.value,
       };
 
@@ -41,8 +39,8 @@ export const InputSection: React.FC<props> = () => {
   };
 
   const handleClear = () => {
-    filterContext.setFilter({
-      unit: filterContext.filter.unit,
+    setFilter({
+      unit: filter.unit,
     });
     // clear all inputs
     document.querySelectorAll("input").forEach((input) => {

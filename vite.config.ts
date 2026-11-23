@@ -9,6 +9,7 @@ export default defineConfig({
     alias: {
       assets: path.resolve(import.meta.dirname, "./src/assets"),
       components: path.resolve(import.meta.dirname, "./src/components"),
+      contexts: path.resolve(import.meta.dirname, "./src/contexts"),
       data: path.resolve(import.meta.dirname, "./src/data"),
       locales: path.resolve(import.meta.dirname, "./src/locales"),
       utils: path.resolve(import.meta.dirname, "./src/utils"),

@@ -22,12 +22,20 @@ const CustomModal: React.FC<ModalProps> = ({ show, handleClose, rowData }) => {
         handleClose();
       };
 
-      // Add event listener for popstate (back button)
-      window.addEventListener("popstate", handlePopState);
+      const handleKeyDown = (event: KeyboardEvent) => {
+        if (event.key === "Escape") {
+          handleClose();
+        }
+      };
 
-      // Clean up event listener when component unmounts
+      // Add event listeners for popstate and Escape key
+      window.addEventListener("popstate", handlePopState);
+      window.addEventListener("keydown", handleKeyDown);
+
+      // Clean up event listeners when component unmounts
       return () => {
         window.removeEventListener("popstate", handlePopState);
+        window.removeEventListener("keydown", handleKeyDown);
       };
     }
   }, [show, handleClose]);
@@ -38,8 +46,9 @@ const CustomModal: React.FC<ModalProps> = ({ show, handleClose, rowData }) => {
       className="modal fade show"
       id="exampleModal"
       tabIndex={-1}
-      // aria-labelledby="exampleModalLabel"
-      // aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="itemDetails"
       style={{
         display: "block",
         backgroundColor: "rgba(0, 0, 0, 0.3)",

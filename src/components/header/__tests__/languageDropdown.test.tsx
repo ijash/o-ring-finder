@@ -1,14 +1,13 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import LanguageDropdown from "components/header/languageDropdown";
-import i18nInit from "locales/i18n";
+import i18next from "locales/i18n";
 import { I18nextProvider } from "react-i18next";
 import { describe, expect, test } from "vitest";
 
 describe("LanguageDropdown component", () => {
   const renderDropdown = () => {
-    const i18n = i18nInit();
     return render(
-      <I18nextProvider i18n={i18n}>
+      <I18nextProvider i18n={i18next}>
         <LanguageDropdown />
       </I18nextProvider>
     );

@@ -1,18 +1,15 @@
 import { TableHead, TableRowsComponent } from "components";
-import { FilterContext } from "components/context";
-import { SortProvider } from "components/context/SortContext";
+import { SortProvider, useFilter } from "contexts";
 import { TABLE_HEADERS, getAllORingData } from "data";
-import React, { useContext } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
-
-interface props {}
 
 type TableHeadField = "standard" | "code" | "id" | "od" | "cs";
 
-export const TableSection: React.FC<props> = () => {
+export const TableSection: React.FC = () => {
   const { t } = useTranslation("global");
-  const filterContext = useContext(FilterContext);
-  const oRingData = getAllORingData(filterContext.filter.unit);
+  const { filter } = useFilter();
+  const oRingData = getAllORingData(filter.unit);
   const translatedTableHead = TABLE_HEADERS.map((header) =>
     t(`table.tableHead.${header.toLowerCase() as TableHeadField}`)
   );
@@ -35,7 +32,7 @@ export const TableSection: React.FC<props> = () => {
               <small>
                 {t("table.infoDesc.desc")}
                 <strong>
-                  {filterContext.filter.unit === "mm"
+                  {filter.unit === "mm"
                     ? t("table.infoDesc.unit.mm")
                     : t("table.infoDesc.unit.inch")}
                 </strong>
@@ -48,7 +45,7 @@ export const TableSection: React.FC<props> = () => {
           <tbody className="table-group-divider">
             <TableRowsComponent
               data={oRingData}
-              filter={filterContext.filter}
+              filter={filter}
             />
           </tbody>
         </table>

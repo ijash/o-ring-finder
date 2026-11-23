@@ -1,4 +1,4 @@
-import { useSort } from "components/context/SortContext";
+import { useSort } from "contexts";
 import React from "react";
 
 interface Props {
@@ -17,7 +17,7 @@ export const TableHead: React.FC<Props> = ({ headerData }) => {
         sortDirection === "asc"
           ? "desc"
           : sortDirection === "desc"
-          ? "undefined"
+          ? null
           : "asc"
       );
     } else {

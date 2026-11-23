@@ -1,5 +1,5 @@
 import { act, renderHook } from "@testing-library/react";
-import { SortProvider, useSort } from "components/context/SortContext";
+import { SortProvider, useSort } from "contexts";
 import type React from "react";
 import { describe, expect, test } from "vitest";
 
@@ -18,7 +18,7 @@ describe("SortContext", () => {
     const { result } = renderHook(() => useSort(), { wrapper });
 
     expect(result.current.sortBy).toBe("");
-    expect(result.current.sortDirection).toBe("undefined");
+    expect(result.current.sortDirection).toBeNull();
 
     act(() => {
       result.current.setSortBy("id");
@@ -33,6 +33,6 @@ describe("SortContext", () => {
     });
 
     expect(result.current.sortBy).toBe("");
-    expect(result.current.sortDirection).toBe("undefined");
+    expect(result.current.sortDirection).toBeNull();
   });
 });

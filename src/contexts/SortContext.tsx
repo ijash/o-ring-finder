@@ -1,6 +1,6 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useMemo, useState } from "react";
 
-export type SortDirection = "asc" | "desc" | "undefined";
+export type SortDirection = "asc" | "desc" | null;
 
 interface SortContextProps {
   sortBy: string;
@@ -18,21 +18,19 @@ interface SortProviderProps {
 
 export const SortProvider: React.FC<SortProviderProps> = ({ children }) => {
   const [sortBy, setSortBy] = useState<string>("");
-  const [sortDirection, setSortDirection] =
-    useState<SortDirection>("undefined");
+  const [sortDirection, setSortDirection] = useState<SortDirection>(null);
 
   const resetSort = () => {
     setSortBy("");
-    setSortDirection("undefined");
+    setSortDirection(null);
   };
 
-  return (
-    <SortContext.Provider
-      value={{ sortBy, sortDirection, setSortBy, setSortDirection, resetSort }}
-    >
-      {children}
-    </SortContext.Provider>
+  const value = useMemo(
+    () => ({ sortBy, sortDirection, setSortBy, setSortDirection, resetSort }),
+    [sortBy, sortDirection]
   );
+
+  return <SortContext.Provider value={value}>{children}</SortContext.Provider>;
 };
 
 export const useSort = () => {

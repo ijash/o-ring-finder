@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import CustomModal from "components/modal/modal";
 import { DataRepresentation, MeasurementUnit, Standard } from "data";
-import i18nInit from "locales/i18n";
+import i18next from "locales/i18n";
 import { I18nextProvider } from "react-i18next";
 import { afterEach, beforeEach, describe, expect, test, vi } from "vitest";
 
@@ -44,9 +44,8 @@ describe("CustomModal component", () => {
     handleClose: () => void;
     rowData: DataRepresentation | null;
   }) => {
-    const i18n = i18nInit();
     return render(
-      <I18nextProvider i18n={i18n}>
+      <I18nextProvider i18n={i18next}>
         <CustomModal {...props} />
       </I18nextProvider>
     );
@@ -131,6 +130,23 @@ describe("CustomModal component", () => {
     renderModal({ show: true, handleClose, rowData: sampleRowData });
 
     window.dispatchEvent(new PopStateEvent("popstate"));
+    expect(handleClose).toHaveBeenCalledTimes(1);
+  });
+
+  test("has proper ARIA accessibility attributes", () => {
+    const handleClose = vi.fn();
+    renderModal({ show: true, handleClose, rowData: sampleRowData });
+
+    const modalDialog = screen.getByRole("dialog");
+    expect(modalDialog).toHaveAttribute("aria-modal", "true");
+    expect(modalDialog).toHaveAttribute("aria-labelledby", "itemDetails");
+  });
+
+  test("calls handleClose when Escape key is pressed", () => {
+    const handleClose = vi.fn();
+    renderModal({ show: true, handleClose, rowData: sampleRowData });
+
+    fireEvent.keyDown(window, { key: "Escape" });
     expect(handleClose).toHaveBeenCalledTimes(1);
   });
 });

@@ -8,7 +8,8 @@ const GoatCounter: React.FC = () => {
     }
 
     let script: HTMLScriptElement | null = null;
-    const handleLoad = () => {
+    const inject = () => {
+      if (script) return;
       script = document.createElement("script");
       script.src = "//gc.zgo.at/count.js";
       script.async = true;
@@ -16,10 +17,14 @@ const GoatCounter: React.FC = () => {
       document.body.appendChild(script);
     };
 
-    window.addEventListener("load", handleLoad);
+    if (document.readyState === "complete") {
+      inject();
+    } else {
+      window.addEventListener("load", inject);
+    }
 
     return () => {
-      window.removeEventListener("load", handleLoad);
+      window.removeEventListener("load", inject);
       if (script && script.parentNode) {
         script.parentNode.removeChild(script);
       }

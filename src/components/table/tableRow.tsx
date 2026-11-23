@@ -1,5 +1,5 @@
-import { useSort } from "components/context/SortContext";
 import CustomModal from "components/modal/modal";
+import { useSort } from "contexts";
 import { DataRepresentation, IDataFilter, Standard } from "data";
 import React, { useState } from "react";
 import { createPortal } from "react-dom";
@@ -68,7 +68,7 @@ export const TableRowsComponent: React.FC<props> = ({ data, filter }) => {
     : [...data];
 
   const rows = [...filteredData].sort((a, b) => {
-    if (sortBy && sortDirection !== "undefined") {
+    if (sortBy && sortDirection !== null) {
       const aValue = a[sortBy as keyof DataRepresentation];
       const bValue = b[sortBy as keyof DataRepresentation];
       if (aValue < bValue) return sortDirection === "asc" ? -1 : 1;

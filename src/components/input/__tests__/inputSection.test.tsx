@@ -1,8 +1,8 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { FilterContext } from "components/context";
 import { InputSection } from "components/input/inputSection";
+import { FilterContext } from "contexts";
 import { IDataFilter, MeasurementUnit } from "data";
-import i18nInit from "locales/i18n";
+import i18next from "locales/i18n";
 import React, { useState } from "react";
 import { I18nextProvider } from "react-i18next";
 import { afterEach, beforeEach, describe, expect, test, vi } from "vitest";
@@ -12,7 +12,6 @@ const TestWrapper: React.FC<{
   initialFilter?: IDataFilter;
   onFilterChange?: (filter: IDataFilter) => void;
 }> = ({ children, initialFilter = { unit: MeasurementUnit.MM }, onFilterChange }) => {
-  const i18n = i18nInit();
   const [filter, setFilterState] = useState<IDataFilter>(initialFilter);
 
   const setFilter: React.Dispatch<React.SetStateAction<IDataFilter>> = (action) => {
@@ -24,7 +23,7 @@ const TestWrapper: React.FC<{
   };
 
   return (
-    <I18nextProvider i18n={i18n}>
+    <I18nextProvider i18n={i18next}>
       <FilterContext.Provider value={{ filter, setFilter }}>
         {children}
       </FilterContext.Provider>

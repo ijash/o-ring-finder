@@ -1,6 +1,6 @@
 import enGlobals from "../en/globals.json";
 import idGlobals from "../id/globals.json";
-import i18nInit from "../i18n";
+import i18next, { i18nInit } from "../i18n";
 
 function getLeafKeysAndValues(
   obj: Record<string, unknown>,
@@ -26,10 +26,10 @@ function getLeafKeysAndValues(
 
 describe("i18n module and translation dictionary parity", () => {
   test("initializes i18n instance cleanly with en language", () => {
-    const i18n = i18nInit();
-    expect(i18n).toBeDefined();
-    expect(i18n.language).toBe("en");
-    expect(i18n.t("header.title", { ns: "global" })).toBe("Oring Finder");
+    expect(i18nInit()).toBe(i18next);
+    expect(i18next).toBeDefined();
+    expect(i18next.language).toBe("en");
+    expect(i18next.t("header.title", { ns: "global" })).toBe("Oring Finder");
   });
 
   test("en and id dictionaries have 100% identical leaf key sets", () => {
@@ -63,7 +63,7 @@ describe("i18n module and translation dictionary parity", () => {
   });
 
   test("switches language between en and id and provides translated text", async () => {
-    const i18n = i18nInit();
+    const i18n = i18next;
 
     expect(i18n.t("inputForms.clear", { ns: "global" })).toBe("Clear filter");
 

@@ -1,16 +1,14 @@
 import {
-  FilterContextProvider,
   FooterText,
+  GoatCounter,
   InputSection,
   NavBar,
   TableSection,
   Title,
 } from "components";
-import GoatCounter from "./common/goatCounter";
+import { FilterContextProvider } from "contexts";
 
-interface MainProps {}
-
-export const Main: React.FC<MainProps> = () => {
+export const Main: React.FC = () => {
   return (
     <main>
       <FilterContextProvider>

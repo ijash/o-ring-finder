@@ -1,11 +1,9 @@
-import { names } from "components/common";
 import React from "react";
 import { useTranslation } from "react-i18next";
-
-interface Props {}
+import { names } from "utils";
 
 const style = "text-center";
-export const FooterText: React.FC<Props> = () => {
+export const FooterText: React.FC = () => {
   const { t } = useTranslation("global");
   return (
     <footer>

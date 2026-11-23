@@ -1,10 +1,8 @@
-import { names } from "components/common";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { names } from "utils";
 
-interface TitleProps {}
-
-export const Title: React.FC<TitleProps> = () => {
+export const Title: React.FC = () => {
   const { t } = useTranslation("global");
   const title = t("header.title");
 

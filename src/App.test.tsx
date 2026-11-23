@@ -1,6 +1,6 @@
 import { act, fireEvent, render, screen } from "@testing-library/react";
 import { MeasurementUnit } from "data";
-import i18nInit from "locales/i18n";
+import i18next from "locales/i18n";
 import { I18nextProvider } from "react-i18next";
 import { afterEach, beforeEach, describe, expect, test, vi } from "vitest";
 import App from "./App";
@@ -16,9 +16,8 @@ describe("App integration tests", () => {
   });
 
   test("renders full app with header, inputs, table, and footer", () => {
-    const i18n = i18nInit();
     render(
-      <I18nextProvider i18n={i18n}>
+      <I18nextProvider i18n={i18next}>
         <App />
       </I18nextProvider>
     );
@@ -30,9 +29,8 @@ describe("App integration tests", () => {
   });
 
   test("filters table data when entering search code", () => {
-    const i18n = i18nInit();
     render(
-      <I18nextProvider i18n={i18n}>
+      <I18nextProvider i18n={i18next}>
         <App />
       </I18nextProvider>
     );
@@ -50,9 +48,8 @@ describe("App integration tests", () => {
   });
 
   test("switches measurement units between mm and inches", () => {
-    const i18n = i18nInit();
     render(
-      <I18nextProvider i18n={i18n}>
+      <I18nextProvider i18n={i18next}>
         <App />
       </I18nextProvider>
     );
@@ -70,9 +67,8 @@ describe("App integration tests", () => {
   });
 
   test("resets filters on clear button click", () => {
-    const i18n = i18nInit();
     render(
-      <I18nextProvider i18n={i18n}>
+      <I18nextProvider i18n={i18next}>
         <App />
       </I18nextProvider>
     );
