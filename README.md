@@ -1,7 +1,7 @@
 # O-Ring Finder — AS568, JIS & Metric O-Ring Size Lookup Tool
 
 [![Live Demo](https://img.shields.io/badge/live-GitHub%20Pages-brightgreen.svg)](https://ijash.github.io/o-ring-finder/)
-[![Version](https://img.shields.io/badge/version-3.3.0-blue.svg)](https://github.com/ijash/o-ring-finder/releases)
+[![Version](https://img.shields.io/badge/version-3.4.0-blue.svg)](https://github.com/ijash/o-ring-finder/releases)
 [![License: GPL-3.0](https://img.shields.io/badge/license-GPL--3.0-orange.svg)](./LICENSE)
 
 > **Open the live tool directly:** **[https://ijash.github.io/o-ring-finder/](https://ijash.github.io/o-ring-finder/)**
@@ -29,6 +29,7 @@ No installation or account required—use the live web app on desktop or mobile:
 
 ## Key Features
 
+* **Offline-First PWA Support:** Installable as a standalone app on Android and desktop, powered by Workbox service worker precaching for 100% offline search, filtering, unit conversion, modal, and FAQ lookup, with seamless background auto-updates and an accessible bilingual (`en`/`id`) offline status badge in the footer.
 * **Dark & Light Theme Mode:** Accessible navbar theme toggle (`ThemeContext`) with synchronous anti-FOUC pre-paint script, Bootstrap 5.3 `data-bs-theme` color modes, dynamic `<meta name="theme-color">` sync, and realistic 3D toroidal SVG visualizer with high contrast in both themes.
 * **Precision Range Filtering:** Filter O-rings simultaneously by `ID`, `OD`, and `CS` min/max ranges or search directly by size code.
 * **URL Deep-Linking & Shareable State:** Bookmark or share exact filter configurations via query parameters (e.g. `?code=010&unit=inch`), automatically synchronized with browser history.
@@ -54,8 +55,8 @@ No installation or account required—use the live web app on desktop or mobile:
 
 ```text
 o-ring-finder/
-├── index.html                  # Vite entry point, SEO metadata & JSON-LD graph
-├── public/                     # Static assets (og-image.png, sitemap.xml, robots.txt, favicon)
+├── index.html                  # Vite entry point, SEO metadata, PWA links & JSON-LD graph
+├── public/                     # Static assets (PWA icons, og-image.png, sitemap.xml, robots.txt, favicon)
 ├── scripts/                    # Reusable automation & quality-gate scripts
 │   ├── audit-codebase.mjs      # Type-safety & hygiene audit
 │   ├── bump-version.mjs        # Safe SemVer bumper (patch / minor)
@@ -65,10 +66,11 @@ o-ring-finder/
 │   └── verify-gates.sh         # Full gate: tsc + i18n + vitest + build + bundle budget
 └── src/
     ├── components/             # UI components (header, input, table, modal, faq, footer, analytics)
-    │   └── faq/                # Collapsible bilingual sizing guide & FAQ
+    │   └── footer/             # Footer with version and bilingual offline indicator
     ├── contexts/               # ThemeContext (useTheme), FilterContext (useFilter) & SortContext (useSort)
     ├── css/                    # SCSS design tokens & modular styles
     ├── data/                   # Static JSON catalogs (as568, jis, metric) + pure accessors
+    ├── hooks/                  # Reactive hooks (useOnlineStatus)
     ├── locales/                # Bilingual EN & ID translation files
     └── utils/                  # Native typed helpers (debounce, names, urlParams)
 ```
@@ -123,6 +125,13 @@ Licensed under the **[GNU General Public License v3.0 (GPL-3.0)](https://www.goo
 ## Changelog
 
 ```text
+v3.4.0 (2026-11-23)
+- Add offline-first PWA support via vite-plugin-pwa and Workbox precaching
+- Precache all application assets, JS/CSS bundles, icons, and O-ring static JSON catalogs
+- Configure W3C Web App Manifest with standalone display, dark theme color, and maskable icons
+- Add useOnlineStatus reactive hook and subtle bilingual (EN/ID) offline indicator in footer
+- Add automated PWA asset and manifest unit/build test suites
+
 v3.3.0 (2026-11-23)
 - Add dark and light theme mode with 2-way toggle in navbar and localStorage persistence
 - Add synchronous anti-FOUC pre-paint script in index.html with OS prefers-color-scheme detection
