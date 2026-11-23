@@ -7,12 +7,14 @@ import { useTranslation } from "react-i18next";
 
 interface props {}
 
+type TableHeadField = "standard" | "code" | "id" | "od" | "cs";
+
 export const TableSection: React.FC<props> = () => {
   const { t } = useTranslation("global");
   const filterContext = useContext(FilterContext);
   const oRingData = getAllORingData(filterContext.filter.unit);
   const translatedTableHead = TABLE_HEADERS.map((header) =>
-    t(`table.tableHead.${header.toLowerCase()}`)
+    t(`table.tableHead.${header.toLowerCase() as TableHeadField}`)
   );
   const tableStyle = `
     table

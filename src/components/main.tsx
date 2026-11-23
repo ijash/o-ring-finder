@@ -10,7 +10,7 @@ import GoatCounter from "./common/goatCounter";
 
 interface MainProps {}
 
-export const Main: React.FC<MainProps> = (props) => {
+export const Main: React.FC<MainProps> = () => {
   return (
     <main>
       <FilterContextProvider>

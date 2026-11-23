@@ -67,10 +67,16 @@ describe("oRingData module", () => {
   describe("convertToUnit and unit conversion", () => {
     test("defaults to mm when unit is undefined or MM", () => {
       const converted = convertToUnit(as568Data.slice(0, 5));
-      expect(converted[0].unit).toBe(MeasurementUnit.MM);
-      expect(converted[0].cs).toBe(as568Data[0].cs);
-      expect(converted[0].id).toBe(as568Data[0].id);
-      expect(converted[0].od).toBe(as568Data[0].od);
+      const firstConverted = converted[0];
+      const firstOriginal = as568Data[0];
+      expect(firstConverted).toBeDefined();
+      expect(firstOriginal).toBeDefined();
+      if (firstConverted && firstOriginal) {
+        expect(firstConverted.unit).toBe(MeasurementUnit.MM);
+        expect(firstConverted.cs).toBe(firstOriginal.cs);
+        expect(firstConverted.id).toBe(firstOriginal.id);
+        expect(firstConverted.od).toBe(firstOriginal.od);
+      }
     });
 
     test("converts dimensions to inch with exact 3-decimal precision", () => {
@@ -118,7 +124,11 @@ describe("oRingData module", () => {
 
       expect(original).toEqual(clonedOriginal);
       expect(converted[0]).not.toBe(original[0]);
-      expect("unit" in original[0]).toBe(false);
+      const firstOriginal = original[0];
+      expect(firstOriginal).toBeDefined();
+      if (firstOriginal) {
+        expect("unit" in firstOriginal).toBe(false);
+      }
     });
   });
 

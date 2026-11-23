@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 interface Props {}
 
 const style = "text-center";
-export const FooterText: React.FC<Props> = (props) => {
+export const FooterText: React.FC<Props> = () => {
   const { t } = useTranslation("global");
   return (
     <footer>

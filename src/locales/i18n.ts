@@ -4,6 +4,15 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import global_en from "../locales/en/globals.json";
 import global_id from "../locales/id/globals.json";
 
+declare module "i18next" {
+  interface CustomTypeOptions {
+    defaultNS: "global";
+    resources: {
+      global: typeof global_en;
+    };
+  }
+}
+
 export default function i18nInit() {
   i18next.use(LanguageDetector).init({
     supportedLngs: ["id", "en"],

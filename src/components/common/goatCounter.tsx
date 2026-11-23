@@ -2,30 +2,31 @@ import React, { useEffect } from "react";
 
 const GoatCounter: React.FC = () => {
   useEffect(() => {
-    const handleLoad = () => {
-      const script = document.createElement("script");
+    const goatCounterId = import.meta.env.VITE_GOAT_COUNTER_ID;
+    if (!goatCounterId) {
+      return;
+    }
 
+    let script: HTMLScriptElement | null = null;
+    const handleLoad = () => {
+      script = document.createElement("script");
       script.src = "//gc.zgo.at/count.js";
       script.async = true;
-      if (process.env.REACT_APP_GOAT_COUNTER_ID) {
-        script.dataset.goatcounter = `https://${process.env.REACT_APP_GOAT_COUNTER_ID}.goatcounter.com/count`;
-      } else {
-        console.error("GOAT_COUNTER_ID is not defined");
-      }
-
+      script.dataset.goatcounter = `https://${goatCounterId}.goatcounter.com/count`;
       document.body.appendChild(script);
     };
 
-    // Attach the event listener for window load
     window.addEventListener("load", handleLoad);
 
-    // Cleanup: remove event listener
     return () => {
       window.removeEventListener("load", handleLoad);
+      if (script && script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
     };
   }, []);
 
-  return null; // No UI for this component
+  return null;
 };
 
 export default GoatCounter;

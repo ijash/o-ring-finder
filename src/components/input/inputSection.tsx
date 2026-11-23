@@ -1,4 +1,4 @@
-import { debounce } from "lodash";
+import { debounce } from "utils";
 import React, { useCallback, useContext } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -23,7 +23,7 @@ export const InputSection: React.FC<props> = () => {
 
   const updateContextDelay = 897; //milliseconds
   const setFilterDebounced = useCallback(
-    debounce((filter) => {
+    debounce((filter: IDataFilter) => {
       filterContext.setFilter(filter);
     }, updateContextDelay),
     [filterContext, updateContextDelay]

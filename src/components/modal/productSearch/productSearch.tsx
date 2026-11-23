@@ -36,7 +36,7 @@ export function ProductSearch({ data }: { data: DataRepresentation }) {
 
   return (
     <div className="text-center">
-      {SEARCH_CATEGORY.map(({ name, id }) => {
+      {SEARCH_CATEGORY.map(({ id }) => {
         const categoryMethods = groupedMethods[id] || [];
 
         // Filter methods based on region
