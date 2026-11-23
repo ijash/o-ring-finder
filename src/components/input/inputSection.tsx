@@ -70,8 +70,14 @@ export const InputSection: React.FC<StandardElementProps> = () => {
       raw === MeasurementUnit.INCH
         ? MeasurementUnit.INCH
         : MeasurementUnit.MM;
-    pendingFilterRef.current.unit = nextUnit;
-    debouncedFlush();
+    debouncedFlush.cancel();
+    const pendingUpdates = { ...pendingFilterRef.current };
+    pendingFilterRef.current = {};
+    setFilter((prev) => ({
+      ...prev,
+      ...pendingUpdates,
+      unit: nextUnit,
+    }));
   };
 
   const handleClear = () => {

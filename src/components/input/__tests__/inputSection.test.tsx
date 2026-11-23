@@ -83,7 +83,7 @@ describe("InputSection component", () => {
     );
   });
 
-  test("updates filter unit when selecting imperial unit", () => {
+  test("updates filter unit synchronously when selecting imperial unit", () => {
     const onFilterChange = vi.fn();
     render(
       <TestWrapper onFilterChange={onFilterChange}>
@@ -94,7 +94,7 @@ describe("InputSection component", () => {
     const unitSelect = screen.getByRole("combobox");
     fireEvent.change(unitSelect, { target: { value: MeasurementUnit.INCH } });
 
-    vi.advanceTimersByTime(900);
+    // Synchronous update: immediate without advancing timers
     expect(onFilterChange).toHaveBeenCalledWith(
       expect.objectContaining({
         unit: MeasurementUnit.INCH,

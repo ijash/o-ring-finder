@@ -1,12 +1,42 @@
-import type { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { faCircle } from "@fortawesome/free-regular-svg-icons";
-import { faEraser, faLanguage } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
 
-function iconFactory(icon: IconProp): React.FC {
-  return () => <FontAwesomeIcon icon={icon} />;
-}
+export type IconProps = React.SVGAttributes<SVGElement>;
 
-export const IconCircle = iconFactory(faCircle);
-export const IconLanguage = iconFactory(faLanguage);
-export const IconEraser = iconFactory(faEraser);
+export const IconCircle: React.FC<IconProps> = (props) => (
+  <svg
+    viewBox="0 0 512 512"
+    width="1em"
+    height="1em"
+    fill="currentColor"
+    aria-hidden="true"
+    {...props}
+  >
+    <path d="M464 256a208 208 0 1 0 -416 0 208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0z" />
+  </svg>
+);
+
+export const IconLanguage: React.FC<IconProps> = (props) => (
+  <svg
+    viewBox="0 0 576 512"
+    width="1em"
+    height="1em"
+    fill="currentColor"
+    aria-hidden="true"
+    {...props}
+  >
+    <path d="M160 0c17.7 0 32 14.3 32 32l0 32 128 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-9.6 0-8.4 23.1c-16.4 45.2-41.1 86.5-72.2 122 14.2 8.8 29 16.6 44.4 23.5l50.4 22.4 62.2-140c5.1-11.6 16.6-19 29.2-19s24.1 7.4 29.2 19l128 288c7.2 16.2-.1 35.1-16.2 42.2s-35.1-.1-42.2-16.2l-20-45-157.5 0-20 45c-7.2 16.2-26.1 23.4-42.2 16.2s-23.4-26.1-16.2-42.2l39.8-89.5-50.4-22.4c-23-10.2-45-22.4-65.8-36.4-21.3 17.2-44.6 32.2-69.5 44.7L78.3 380.6c-15.8 7.9-35 1.5-42.9-14.3s-1.5-35 14.3-42.9l34.5-17.3c16.3-8.2 31.8-17.7 46.4-28.3-13.8-12.7-26.8-26.4-38.9-40.9L81.6 224.7c-11.3-13.6-9.5-33.8 4.1-45.1s33.8-9.5 45.1 4.1l10.2 12.2c11.5 13.9 24.1 26.8 37.4 38.7 27.5-30.4 49.2-66.1 63.5-105.4l.5-1.2-210.3 0C14.3 128 0 113.7 0 96S14.3 64 32 64l96 0 0-32c0-17.7 14.3-32 32-32zM416 270.8L365.7 384 466.3 384 416 270.8z" />
+  </svg>
+);
+
+export const IconEraser: React.FC<IconProps> = (props) => (
+  <svg
+    viewBox="0 0 576 512"
+    width="1em"
+    height="1em"
+    fill="currentColor"
+    aria-hidden="true"
+    {...props}
+  >
+    <path d="M178.5 416l123 0 65.3-65.3-173.5-173.5-126.7 126.7 112 112zM224 480l-45.5 0c-17 0-33.3-6.7-45.3-18.7L17 345C6.1 334.1 0 319.4 0 304s6.1-30.1 17-41L263 17C273.9 6.1 288.6 0 304 0s30.1 6.1 41 17L527 199c10.9 10.9 17 25.6 17 41s-6.1 30.1-17 41l-135 135 120 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-288 0z" />
+  </svg>
+);

@@ -135,7 +135,7 @@ describe("TableSection component", () => {
     expect(idHeader).toHaveTextContent("▼");
   });
 
-  test("opens modal when a table row is clicked", () => {
+  test("opens modal when a table row is clicked", async () => {
     render(
       <TestWrapper initialFilter={{ unit: MeasurementUnit.MM, code: "001" }}>
         <TableSection />
@@ -147,8 +147,8 @@ describe("TableSection component", () => {
     expect(dataRows.length).toBeGreaterThan(1);
     if (dataRows[1]) {
       fireEvent.click(dataRows[1]);
-      expect(screen.getByRole("document")).toBeInTheDocument();
-      expect(screen.getByRole("button", { name: /close/i })).toBeInTheDocument();
+      expect(await screen.findByRole("document")).toBeInTheDocument();
+      expect(await screen.findByRole("button", { name: /close/i })).toBeInTheDocument();
     }
   });
 

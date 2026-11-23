@@ -1,8 +1,9 @@
-import CustomModal from "components/modal/modal";
 import { useSort } from "contexts";
 import { DataRepresentation, IDataFilter, Standard } from "data";
-import React, { useCallback, useMemo, useState } from "react";
+import React, { Suspense, useCallback, useDeferredValue, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
+
+const CustomModal = React.lazy(() => import("components/modal/modal"));
 
 interface props {
   data: readonly DataRepresentation[];
@@ -31,15 +32,15 @@ const specialStyle = {
   code: "fw-bold ",
 };
 
-export const TableRowsComponent: React.FC<props> = ({ data, filter }) => {
+export const TableRowsComponent: React.FC<props> = React.memo(({ data, filter }) => {
   const { sortBy, sortDirection } = useSort();
   const [showModal, setShowModal] = useState(false);
   const [modalData, setModalData] = useState<DataRepresentation | null>(null);
 
-  const handleShowModal = (rowData: DataRepresentation) => {
+  const handleShowModal = useCallback((rowData: DataRepresentation) => {
     setModalData(rowData);
     setShowModal(true);
-  };
+  }, []);
 
   const handleCloseModal = useCallback(() => {
     setShowModal(false);
@@ -80,9 +81,11 @@ export const TableRowsComponent: React.FC<props> = ({ data, filter }) => {
     });
   }, [filteredData, sortBy, sortDirection]);
 
+  const deferredRows = useDeferredValue(rows);
+
   return (
     <>
-      {rows.map((row) => (
+      {deferredRows.map((row) => (
         <tr
           vocab="https://schema.org/"
           typeof="Product"
@@ -105,16 +108,17 @@ export const TableRowsComponent: React.FC<props> = ({ data, filter }) => {
         </tr>
       ))}
       {showModal &&
-        // https://react.dev/reference/react-dom/createPortal
         createPortal(
-          <CustomModal
-            show={showModal}
-            handleClose={handleCloseModal}
-            rowData={modalData}
-          />,
-          document.body // Modal will be rendered in the <body> element. because <tbody> wont accept any <div> element that resides inside the modal
+          <Suspense fallback={null}>
+            <CustomModal
+              show={showModal}
+              handleClose={handleCloseModal}
+              rowData={modalData}
+            />
+          </Suspense>,
+          document.body
         )}
     </>
   );
-};
+});
 

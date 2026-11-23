@@ -51,4 +51,52 @@ describe("LanguageDropdown component", () => {
       screen.getByRole("button", { name: /language/i })
     ).toBeInTheDocument();
   });
+
+  test("toggles dropdown menu open and closed on button click", () => {
+    const { container } = renderDropdown();
+
+    const button = screen.getByRole("button", { name: /language/i });
+    const menu = container.querySelector(".dropdown-menu");
+
+    expect(button).toHaveAttribute("aria-expanded", "false");
+    expect(menu).not.toHaveClass("show");
+
+    fireEvent.click(button);
+    expect(button).toHaveAttribute("aria-expanded", "true");
+    expect(menu).toHaveClass("show");
+
+    fireEvent.click(button);
+    expect(button).toHaveAttribute("aria-expanded", "false");
+    expect(menu).not.toHaveClass("show");
+  });
+
+  test("closes dropdown on Escape key press", () => {
+    const { container } = renderDropdown();
+
+    const button = screen.getByRole("button", { name: /language/i });
+    const menu = container.querySelector(".dropdown-menu");
+
+    fireEvent.click(button);
+    expect(button).toHaveAttribute("aria-expanded", "true");
+    expect(menu).toHaveClass("show");
+
+    fireEvent.keyDown(document, { key: "Escape" });
+    expect(button).toHaveAttribute("aria-expanded", "false");
+    expect(menu).not.toHaveClass("show");
+  });
+
+  test("closes dropdown on outside click", () => {
+    const { container } = renderDropdown();
+
+    const button = screen.getByRole("button", { name: /language/i });
+    const menu = container.querySelector(".dropdown-menu");
+
+    fireEvent.click(button);
+    expect(button).toHaveAttribute("aria-expanded", "true");
+    expect(menu).toHaveClass("show");
+
+    fireEvent.mouseDown(document.body);
+    expect(button).toHaveAttribute("aria-expanded", "false");
+    expect(menu).not.toHaveClass("show");
+  });
 });
