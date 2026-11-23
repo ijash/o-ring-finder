@@ -1,6 +1,7 @@
-import React, { createContext, useContext, useMemo, useState } from "react";
+import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
 
 import { IDataFilter, MeasurementUnit } from "data";
+import { parseUrlFilters, syncFilterToUrl } from "utils";
 
 interface Props {
   children: React.ReactNode;
@@ -16,10 +17,20 @@ export const FilterContext = createContext<FilterContextStateType | undefined>(
 );
 
 export const FilterContextProvider: React.FC<Props> = ({ children }) => {
-  const initFilterValue = {
-    unit: MeasurementUnit.MM,
-  };
-  const [filter, setFilter] = useState<IDataFilter>(initFilterValue);
+  const [filter, setFilter] = useState<IDataFilter>(() => {
+    const initialUrlFilters =
+      typeof window !== "undefined"
+        ? parseUrlFilters(window.location.search)
+        : {};
+    return {
+      unit: MeasurementUnit.MM,
+      ...initialUrlFilters,
+    };
+  });
+
+  useEffect(() => {
+    syncFilterToUrl(filter);
+  }, [filter]);
 
   const value = useMemo(() => ({ filter, setFilter }), [filter]);
 

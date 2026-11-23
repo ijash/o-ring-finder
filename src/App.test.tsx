@@ -54,7 +54,7 @@ describe("App integration tests", () => {
       </I18nextProvider>
     );
 
-    expect(screen.getByText(/millimeters/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/millimeters/i).length).toBeGreaterThan(0);
 
     const unitSelect = screen.getByRole("combobox");
     fireEvent.change(unitSelect, { target: { value: MeasurementUnit.INCH } });
@@ -63,7 +63,7 @@ describe("App integration tests", () => {
       vi.advanceTimersByTime(900);
     });
 
-    expect(screen.getByText(/inches/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/inches/i).length).toBeGreaterThan(0);
   });
 
   test("resets filters on clear button click", () => {
@@ -88,8 +88,8 @@ describe("App integration tests", () => {
     expect(window.scrollTo).toHaveBeenCalledWith(0, 0);
   });
 
-  test("renders valid meta description and semantic header navigation landmark", () => {
-    render(
+  test("renders valid meta description, semantic landmark siblings, and no invalid small p nesting", () => {
+    const { container } = render(
       <I18nextProvider i18n={i18next}>
         <App />
       </I18nextProvider>
@@ -102,7 +102,23 @@ describe("App integration tests", () => {
       expect.stringContaining("o-ring size & code finder")
     );
 
-    expect(screen.getByRole("banner")).toBeInTheDocument();
-    expect(screen.getByRole("navigation")).toBeInTheDocument();
+    const banner = screen.getByRole("banner");
+    const main = screen.getByRole("main");
+    const footer = screen.getByRole("contentinfo");
+
+    expect(banner).toBeInTheDocument();
+    expect(main).toBeInTheDocument();
+    expect(footer).toBeInTheDocument();
+
+    // Verify header, main, and footer are siblings under the root wrapper
+    expect(banner.parentElement).toBe(main.parentElement);
+    expect(main.parentElement).toBe(footer.parentElement);
+
+    // Verify FAQ is rendered inside main
+    expect(screen.getByRole("region", { name: /o-ring sizing guide & faq/i })).toBeInTheDocument();
+
+    // Verify zero <p> nested in <small>
+    const invalidNesting = container.querySelectorAll("small p");
+    expect(invalidNesting).toHaveLength(0);
   });
 });

@@ -11,7 +11,7 @@ export function NavBar() {
   };
 
   return (
-    <header className="sticky-top">
+    <div className="sticky-top">
       <nav className="navbar bg-primary shadow-sm">
         <div className="container">
           <h2
@@ -39,6 +39,6 @@ export function NavBar() {
           <LanguageDropdown />
         </div>
       </nav>
-    </header>
+    </div>
   );
 }

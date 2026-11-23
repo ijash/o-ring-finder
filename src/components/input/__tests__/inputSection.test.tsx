@@ -199,4 +199,32 @@ describe("InputSection component", () => {
 
     expect(onFilterChange).not.toHaveBeenCalled();
   });
+
+  test("pre-populates form inputs from initial filter and provides explicit image dimensions", () => {
+    render(
+      <TestWrapper
+        initialFilter={{
+          unit: MeasurementUnit.INCH,
+          code: "010",
+          minId: 5.5,
+          maxId: 10,
+        }}
+      >
+        <InputSection />
+      </TestWrapper>
+    );
+
+    const codeInput = screen.getByPlaceholderText(/ring code/i) as HTMLInputElement;
+    const minIdInput = screen.getByPlaceholderText(/min id/i) as HTMLInputElement;
+    const maxIdInput = screen.getByPlaceholderText(/max id/i) as HTMLInputElement;
+
+    expect(codeInput.value).toBe("010");
+    expect(minIdInput.value).toBe("5.5");
+    expect(maxIdInput.value).toBe("10");
+
+    const img = screen.getByRole("img");
+    expect(img).toHaveAttribute("width", "340");
+    expect(img).toHaveAttribute("height", "230");
+    expect(img).toHaveAttribute("alt", expect.stringContaining("cross-section diagram"));
+  });
 });

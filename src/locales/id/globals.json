@@ -3,8 +3,8 @@
         "display": "Bahasa"
     },
     "meta": {
-        "title": "Oring Finder",
-        "description": "Aplikasi pencari ukuran & kode o-ring dibuat oleh {{author}}. Tersedia dalam tiga standar umum: AS568, JIS Jepang, dan Common Metric."
+        "title": "Tabel Ukuran & Pencari O-Ring | Standar AS568, JIS, Metrik",
+        "description": "Aplikasi tabel ukuran & pencari kode o-ring oleh {{author}}. Cari 3.822 ukuran standar AS568, JIS, dan Metrik berdasarkan ID, OD, dan CS dalam mm & inci."
     },
     "header": {
         "title": "Oring Finder",
@@ -85,5 +85,25 @@
         "eCommerceWeb": "E-Commerce",
         "close": "Tutup",
         "loading": "Memuat..."
+    },
+    "faq": {
+        "sectionTitle": "Panduan Ukuran & FAQ O-Ring",
+        "sectionSubtitle": "Pertanyaan umum mengenai standar ukuran, pengukuran, dan konversi dimensi o-ring.",
+        "q1": {
+            "question": "Apa perbedaan antara standar O-ring AS568, JIS B 2401, dan Metrik?",
+            "answer": "AS568 adalah standar Amerika Utara berbasis fraksi inci dengan penomoran dash standar. JIS B 2401 adalah standar Jepang yang dikelompokkan ke dalam seri P (dinamis/packing), G (statis/gasket), S (dimensi khusus), dan V (vakum). O-ring Metrik ditentukan langsung dalam milimeter (Diameter Dalam × Tebal/Cross Section) mengikuti standar internasional seperti ISO 3601."
+        },
+        "q2": {
+            "question": "Bagaimana cara mengukur O-ring dengan akurat?",
+            "answer": "Untuk mengidentifikasi o-ring, ukur dua dimensi utama menggunakan jangka sorong (caliper): Diameter Dalam (ID) pada lubang tengah, dan Tebal/Cross Section (CS) pada ketebalan karet. Diameter Luar (OD) dapat dihitung dengan rumus: OD = ID + (2 × CS)."
+        },
+        "q3": {
+            "question": "Bagaimana cara menghitung Diameter Luar (OD) dari ID dan CS?",
+            "answer": "Hubungannya adalah: Diameter Luar (OD) = Diameter Dalam (ID) + 2 × Tebal (CS). Contohnya, o-ring dengan ID 10 mm dan CS 2 mm memiliki OD sebesar 10 + 2(2) = 14 mm."
+        },
+        "q4": {
+            "question": "Bagaimana cara konversi ukuran antara milimeter dan inci?",
+            "answer": "1 inci sama dengan tepat 25,4 milimeter. Untuk mengonversi inci ke milimeter, kalikan dengan 25,4. Untuk mengonversi milimeter ke inci, bagi dengan 25,4 (atau kalikan dengan 0,03937)."
+        }
     }
 }

@@ -64,7 +64,7 @@ const TestSortWrapper: React.FC<{
 };
 
 describe("TableRowsComponent", () => {
-  test("renders all provided rows with schema metadata", () => {
+  test("renders all provided rows without invalid RDFa attributes", () => {
     render(
       <TestSortWrapper>
         <TableRowsComponent data={mockData} />
@@ -77,6 +77,12 @@ describe("TableRowsComponent", () => {
     expect(screen.getByText("P3")).toBeInTheDocument();
     expect(screen.getByText("Common Metric")).toBeInTheDocument();
     expect(screen.getByText("1X1")).toBeInTheDocument();
+
+    const rows = screen.getAllByRole("row");
+    for (const row of rows) {
+      expect(row).not.toHaveAttribute("vocab");
+      expect(row).not.toHaveAttribute("typeof");
+    }
   });
 
   test("filters rows by standard and code", () => {

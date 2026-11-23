@@ -3,8 +3,8 @@
         "display": "Language"
     },
     "meta": {
-        "title": "Oring Finder",
-        "description": "Straight to the point o-ring size & code finder tool by {{author}}. Available in three standards: AS568, Japanese JIS, and Common Metric."
+        "title": "O-Ring Size Chart & Finder | AS568, JIS, Metric Sizes",
+        "description": "o-ring size & code finder tool by {{author}}. Search 3,822 sizes across AS568, JIS, and Metric standards by ID, OD, and CS in mm & inch."
     },
     "header": {
         "title": "Oring Finder",
@@ -85,5 +85,25 @@
         "eCommerceWeb": "E-Commerce",
         "close": "Close",
         "loading": "Loading..."
+    },
+    "faq": {
+        "sectionTitle": "O-Ring Sizing Guide & FAQ",
+        "sectionSubtitle": "Frequently asked questions about O-ring standards, measurements, and conversions.",
+        "q1": {
+            "question": "What is the difference between AS568, JIS B 2401, and Metric O-ring standards?",
+            "answer": "AS568 is the North American standard based on fractional inches with standardized dash numbers. JIS B 2401 is the Japanese standard categorized into P (dynamic/packing), G (static/gasket), S (special dimensions), and V (vacuum) series. Metric O-rings are specified directly in millimeters (Inside Diameter × Cross Section) following international standards such as ISO 3601."
+        },
+        "q2": {
+            "question": "How do I accurately measure an O-ring?",
+            "answer": "To identify an O-ring, measure two critical dimensions using a vernier caliper: Inside Diameter (ID) across the inner opening, and Cross Section (CS) across the cord thickness. Outside Diameter (OD) can be verified using the formula: OD = ID + (2 × CS)."
+        },
+        "q3": {
+            "question": "How do I calculate Outer Diameter (OD) from ID and CS?",
+            "answer": "The relationship is: Outer Diameter (OD) = Inside Diameter (ID) + 2 × Cross Section (CS). For example, an O-ring with 10 mm ID and 2 mm CS has an OD of 10 + 2(2) = 14 mm."
+        },
+        "q4": {
+            "question": "How do I convert between millimeters and inches?",
+            "answer": "1 inch equals exactly 25.4 millimeters. To convert inches to millimeters, multiply by 25.4. To convert millimeters to inches, divide by 25.4 (or multiply by 0.03937)."
+        }
     }
 }

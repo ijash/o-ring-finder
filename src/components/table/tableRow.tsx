@@ -87,19 +87,16 @@ export const TableRowsComponent: React.FC<props> = React.memo(({ data, filter })
     <>
       {deferredRows.map((row) => (
         <tr
-          vocab="https://schema.org/"
-          typeof="Product"
           key={`${row.standard}-${row.code}`}
           onClick={() => handleShowModal(row)}
           style={{ cursor: "pointer" }}
         >
           <td
             className={`${rowStyle} ${specialStyle.standard(row.standard)}`}
-            property="brand"
           >
             {row.standard}
           </td>
-          <td className={`${rowStyle} ${specialStyle.code}`} property="size">
+          <td className={`${rowStyle} ${specialStyle.code}`}>
             {row.code}
           </td>
           <td className={`${rowStyle}`}>{row.id}</td>

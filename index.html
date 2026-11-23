@@ -5,16 +5,118 @@
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    <title>O-Ring Size Chart &amp; Finder | AS568, JIS, Metric Sizes</title>
     <meta
       name="description"
-      content="Straight to the point o-ring size finder tool"
+      content="O-Ring size chart &amp; code finder tool. Search and filter 3,822 standard O-ring sizes across AS568, JIS B 2401, and Metric standards by ID, OD, and CS in mm and inches."
     />
+    <link rel="canonical" href="https://ijash.github.io/o-ring-finder/" />
+    <link rel="alternate" hreflang="en" href="https://ijash.github.io/o-ring-finder/?lng=en" />
+    <link rel="alternate" hreflang="id" href="https://ijash.github.io/o-ring-finder/?lng=id" />
+    <link rel="alternate" hreflang="x-default" href="https://ijash.github.io/o-ring-finder/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="O-Ring Size Chart &amp; Finder | AS568, JIS, Metric Sizes" />
+    <meta property="og:description" content="Search and filter 3,822 standard O-ring sizes across AS568, JIS B 2401, and Metric standards by ID, OD, and CS in mm and inches." />
+    <meta property="og:url" content="https://ijash.github.io/o-ring-finder/" />
+    <meta property="og:image" content="https://ijash.github.io/o-ring-finder/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="O-Ring Size Finder" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="id_ID" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="O-Ring Size Chart &amp; Finder | AS568, JIS, Metric Sizes" />
+    <meta name="twitter:description" content="Search and filter 3,822 standard O-ring sizes across AS568, JIS B 2401, and Metric standards by ID, OD, and CS in mm and inches." />
+    <meta name="twitter:image" content="https://ijash.github.io/o-ring-finder/og-image.png" />
+
     <link rel="apple-touch-icon" href="/oring-logo.png" />
     <link rel="manifest" href="/manifest.json" />
-    <title>O-Ring Size Finder</title>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "@id": "https://ijash.github.io/o-ring-finder/#webapp",
+          "name": "O-Ring Size Chart & Finder",
+          "url": "https://ijash.github.io/o-ring-finder/",
+          "description": "Interactive O-ring size chart and finder for AS568, JIS B 2401, and Metric sizes. Filter and search 3,822 O-ring dimensions by ID, OD, and CS in mm and inches.",
+          "applicationCategory": "EngineeringApplication",
+          "operatingSystem": "All",
+          "inLanguage": ["en", "id"],
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://ijash.github.io/o-ring-finder/?code={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "Dataset",
+          "@id": "https://ijash.github.io/o-ring-finder/#dataset",
+          "name": "Standard O-Ring Dimensions Catalog (AS568, JIS B 2401, Metric)",
+          "description": "Technical dimensional specifications for 3,822 O-rings including Inside Diameter (ID), Outside Diameter (OD), and Cross Section (CS) in millimeters and inches.",
+          "license": "https://opensource.org/licenses/MIT",
+          "variableMeasured": ["Inside Diameter (ID)", "Outside Diameter (OD)", "Cross Section (CS)"]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://ijash.github.io/o-ring-finder/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is the difference between AS568, JIS, and Metric O-rings?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "AS568 is the Aerospace Standard inch-based O-ring sizing system commonly used in North America. JIS B 2401 is the Japanese Industrial Standard series categorized by application (P for dynamic, G for static, S for special). Metric O-rings are defined by nominal millimeter dimensions (Inside Diameter x Cross Section) widely used in ISO 3601 global machinery."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do you measure an O-ring?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Measure three primary dimensions: 1. Inside Diameter (ID) - distance between inner walls. 2. Cross Section (CS) - thickness/diameter of the rubber cord. 3. Outside Diameter (OD) - distance across outer edges, calculated as OD = ID + (2 x CS)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How to convert O-ring measurements between millimeters and inches?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Multiply inches by 25.4 to get millimeters (mm = inch x 25.4). Divide millimeters by 25.4 to get inches (inch = mm / 25.4)."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      <div style="padding: 20px; font-family: sans-serif; max-width: 800px; margin: 0 auto;">
+        <h2>O-Ring Size Chart &amp; Finder</h2>
+        <p>Interactive tool to search, filter, and convert 3,822 standard O-ring sizes across AS568 (Aerospace Standard), JIS B 2401 (Japanese Industrial Standard), and Common Metric series.</p>
+        <h3>Dimensions Reference:</h3>
+        <ul>
+          <li><strong>ID (Inside Diameter):</strong> Inner measurement of the ring cord opening.</li>
+          <li><strong>OD (Outside Diameter):</strong> Outer boundary distance: OD = ID + (2 &times; CS).</li>
+          <li><strong>CS (Cross Section):</strong> Cord thickness / diameter.</li>
+        </ul>
+        <p>JavaScript is required to use real-time dimensional filtering and unit conversions.</p>
+      </div>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/index.tsx"></script>
   </body>

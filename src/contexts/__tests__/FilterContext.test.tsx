@@ -30,4 +30,25 @@ describe("FilterContext", () => {
     expect(result.current.filter.unit).toBe(MeasurementUnit.INCH);
     expect(result.current.filter.code).toBe("001");
   });
+
+  test("initializes filter state from window.location.search query parameters", () => {
+    window.history.replaceState(
+      null,
+      "",
+      "/?code=010&unit=inch&minId=5&maxId=15"
+    );
+
+    const wrapper = ({ children }: { children: React.ReactNode }) => (
+      <FilterContextProvider>{children}</FilterContextProvider>
+    );
+
+    const { result } = renderHook(() => useFilter(), { wrapper });
+
+    expect(result.current.filter.code).toBe("010");
+    expect(result.current.filter.unit).toBe(MeasurementUnit.INCH);
+    expect(result.current.filter.minId).toBe(5);
+    expect(result.current.filter.maxId).toBe(15);
+
+    window.history.replaceState(null, "", "/");
+  });
 });

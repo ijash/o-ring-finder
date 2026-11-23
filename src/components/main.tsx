@@ -1,4 +1,5 @@
 import {
+  FaqSection,
   FooterText,
   GoatCounter,
   InputSection,
@@ -10,17 +11,18 @@ import { FilterContextProvider } from "contexts";
 
 export const Main: React.FC = () => {
   return (
-    <main>
-      <FilterContextProvider>
+    <FilterContextProvider>
+      <header>
         <NavBar />
         <Title />
-        <div className="container">
-          <InputSection />
-          <TableSection />
-        </div>
-        <FooterText />
-      </FilterContextProvider>
+      </header>
+      <main className="container">
+        <InputSection />
+        <TableSection />
+        <FaqSection />
+      </main>
+      <FooterText />
       <GoatCounter />
-    </main>
+    </FilterContextProvider>
   );
 };

@@ -84,8 +84,14 @@ export const InputSection: React.FC<StandardElementProps> = () => {
     debouncedFlush.cancel();
     pendingFilterRef.current = {};
     const preservedUnit = filter.unit ?? MeasurementUnit.MM;
-    formRef.current?.reset();
     if (formRef.current) {
+      formRef.current.reset();
+      const inputs = formRef.current.querySelectorAll<HTMLInputElement>(
+        "input[type='text'], input[type='number']"
+      );
+      inputs.forEach((input) => {
+        input.value = "";
+      });
       const select = formRef.current.querySelector("select");
       if (select) {
         select.value = preservedUnit;
@@ -107,7 +113,9 @@ export const InputSection: React.FC<StandardElementProps> = () => {
         >
           <img
             src={oringSpec}
-            alt="O-ring Specifications"
+            alt="O-ring cross-section diagram showing inside diameter (ID), outside diameter (OD), and cross section (CS)"
+            width="340"
+            height="230"
             className="
                 shadow-sm
                 d-flex
@@ -140,6 +148,7 @@ export const InputSection: React.FC<StandardElementProps> = () => {
             <TextInput
               name={t("inputForms.code.placeholder")}
               id="ringcode"
+              defaultValue={filter.code}
               handleChange={handleTextFilter("code")}
             ></TextInput>
           </LabelWrapper>
@@ -147,6 +156,7 @@ export const InputSection: React.FC<StandardElementProps> = () => {
             <NumberInput
               name={t("inputForms.minId.placeholder")}
               id="minid"
+              defaultValue={filter.minId}
               handleChange={handleNumericFilter("minId")}
             ></NumberInput>
           </LabelWrapper>
@@ -154,6 +164,7 @@ export const InputSection: React.FC<StandardElementProps> = () => {
             <NumberInput
               name={t("inputForms.maxId.placeholder")}
               id="maxid"
+              defaultValue={filter.maxId}
               handleChange={handleNumericFilter("maxId")}
             ></NumberInput>
           </LabelWrapper>
@@ -164,6 +175,7 @@ export const InputSection: React.FC<StandardElementProps> = () => {
             <NumberInput
               name={t("inputForms.minOd.placeholder")}
               id="minod"
+              defaultValue={filter.minOd}
               handleChange={handleNumericFilter("minOd")}
             ></NumberInput>
           </LabelWrapper>
@@ -171,6 +183,7 @@ export const InputSection: React.FC<StandardElementProps> = () => {
             <NumberInput
               name={t("inputForms.maxOd.placeholder")}
               id="maxod"
+              defaultValue={filter.maxOd}
               handleChange={handleNumericFilter("maxOd")}
             ></NumberInput>
           </LabelWrapper>
@@ -178,6 +191,7 @@ export const InputSection: React.FC<StandardElementProps> = () => {
             <NumberInput
               name={t("inputForms.minCs.placeholder")}
               id="mincs"
+              defaultValue={filter.minCs}
               handleChange={handleNumericFilter("minCs")}
             ></NumberInput>
           </LabelWrapper>
@@ -185,6 +199,7 @@ export const InputSection: React.FC<StandardElementProps> = () => {
             <NumberInput
               name={t("inputForms.maxCs.placeholder")}
               id="maxcs"
+              defaultValue={filter.maxCs}
               handleChange={handleNumericFilter("maxCs")}
             ></NumberInput>
           </LabelWrapper>
