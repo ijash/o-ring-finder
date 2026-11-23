@@ -1,6 +1,6 @@
 {
   "name": "o-ring-finder",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "homepage": "https://ijash.github.io/o-ring-finder",
   "license": "LGPL-3.0-or-later",
   "type": "module",
@@ -57,6 +57,7 @@
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
     "@vitejs/plugin-react": "^6.3.0",
+    "@vitest/coverage-v8": "^5.1.1",
     "gh-pages": "^6.3.0",
     "jsdom": "^31.0.1",
     "sass": "^1.108.2",

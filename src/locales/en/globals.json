@@ -56,15 +56,6 @@
                 "inch": "Inches"
             }
         },
-        "table": {
-            "infoDesc": {
-                "desc": "Tabel ukuran o-ring menggunakan satuan ",
-                "unit": {
-                    "mm": "Milimeter",
-                    "inch": "Inci"
-                }
-            }
-        },
         "tableHead": {
             "standard": "Standard",
             "code": "Code",

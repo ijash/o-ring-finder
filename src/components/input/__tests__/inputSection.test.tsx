@@ -1,0 +1,129 @@
+import { fireEvent, render, screen } from "@testing-library/react";
+import { FilterContext } from "components/context";
+import { InputSection } from "components/input/inputSection";
+import { IDataFilter, MeasurementUnit } from "data";
+import i18nInit from "locales/i18n";
+import React, { useState } from "react";
+import { I18nextProvider } from "react-i18next";
+import { afterEach, beforeEach, describe, expect, test, vi } from "vitest";
+
+const TestWrapper: React.FC<{
+  children: React.ReactNode;
+  initialFilter?: IDataFilter;
+  onFilterChange?: (filter: IDataFilter) => void;
+}> = ({ children, initialFilter = { unit: MeasurementUnit.MM }, onFilterChange }) => {
+  const i18n = i18nInit();
+  const [filter, setFilterState] = useState<IDataFilter>(initialFilter);
+
+  const setFilter: React.Dispatch<React.SetStateAction<IDataFilter>> = (action) => {
+    setFilterState((prev) => {
+      const next = typeof action === "function" ? action(prev) : action;
+      if (onFilterChange) onFilterChange(next);
+      return next;
+    });
+  };
+
+  return (
+    <I18nextProvider i18n={i18n}>
+      <FilterContext.Provider value={{ filter, setFilter }}>
+        {children}
+      </FilterContext.Provider>
+    </I18nextProvider>
+  );
+};
+
+describe("InputSection component", () => {
+  beforeEach(() => {
+    vi.useFakeTimers();
+    window.scrollTo = vi.fn();
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  test("renders all form inputs and unit dropdown", () => {
+    render(
+      <TestWrapper>
+        <InputSection />
+      </TestWrapper>
+    );
+
+    expect(screen.getByRole("combobox")).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(/ring code/i)).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(/min id/i)).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(/max id/i)).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(/min od/i)).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(/max od/i)).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(/min cs/i)).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(/max cs/i)).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /clear filter/i })).toBeInTheDocument();
+  });
+
+  test("updates filter after debounce delay when typing in code input", () => {
+    const onFilterChange = vi.fn();
+    render(
+      <TestWrapper onFilterChange={onFilterChange}>
+        <InputSection />
+      </TestWrapper>
+    );
+
+    const codeInput = screen.getByPlaceholderText(/ring code/i);
+    fireEvent.change(codeInput, { target: { value: "001" } });
+
+    // Debounce delay is 897ms
+    vi.advanceTimersByTime(500);
+    expect(onFilterChange).not.toHaveBeenCalled();
+
+    vi.advanceTimersByTime(400);
+    expect(onFilterChange).toHaveBeenCalledWith(
+      expect.objectContaining({
+        unit: MeasurementUnit.MM,
+        code: "001",
+      })
+    );
+  });
+
+  test("updates filter unit when selecting imperial unit", () => {
+    const onFilterChange = vi.fn();
+    render(
+      <TestWrapper onFilterChange={onFilterChange}>
+        <InputSection />
+      </TestWrapper>
+    );
+
+    const unitSelect = screen.getByRole("combobox");
+    fireEvent.change(unitSelect, { target: { value: MeasurementUnit.INCH } });
+
+    vi.advanceTimersByTime(900);
+    expect(onFilterChange).toHaveBeenCalledWith(
+      expect.objectContaining({
+        unit: MeasurementUnit.INCH,
+      })
+    );
+  });
+
+  test("resets all inputs and scrolls to top on clear button click", () => {
+    const onFilterChange = vi.fn();
+    render(
+      <TestWrapper onFilterChange={onFilterChange}>
+        <InputSection />
+      </TestWrapper>
+    );
+
+    const codeInput = screen.getByPlaceholderText(/ring code/i) as HTMLInputElement;
+    const minIdInput = screen.getByPlaceholderText(/min id/i) as HTMLInputElement;
+    fireEvent.change(codeInput, { target: { value: "AS" } });
+    fireEvent.change(minIdInput, { target: { value: "10" } });
+
+    const clearButton = screen.getByRole("button", { name: /clear filter/i });
+    fireEvent.click(clearButton);
+
+    expect(codeInput.value).toBe("");
+    expect(minIdInput.value).toBe("");
+    expect(window.scrollTo).toHaveBeenCalledWith(0, 0);
+    expect(onFilterChange).toHaveBeenCalledWith({
+      unit: MeasurementUnit.MM,
+    });
+  });
+});
