@@ -1,7 +1,7 @@
 import { TableHead, TableRowsComponent } from "components";
 import { FilterContext } from "components/context";
 import { SortProvider } from "components/context/SortContext";
-import { As568Data, JisData, MetricData, StandardData } from "data";
+import { TABLE_HEADERS, getAllORingData } from "data";
 import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -9,12 +9,9 @@ interface props {}
 
 export const TableSection: React.FC<props> = () => {
   const { t } = useTranslation("global");
-
-  const as568 = As568Data;
-  const jis = JisData;
-  const metric = MetricData;
   const filterContext = useContext(FilterContext);
-  const translatedTableHead = StandardData.getHeaders().map((header) =>
+  const oRingData = getAllORingData(filterContext.filter.unit);
+  const translatedTableHead = TABLE_HEADERS.map((header) =>
     t(`table.tableHead.${header.toLowerCase()}`)
   );
   const tableStyle = `
@@ -48,7 +45,7 @@ export const TableSection: React.FC<props> = () => {
 
           <tbody className="table-group-divider">
             <TableRowsComponent
-              data={[as568, jis, metric]}
+              data={oRingData}
               filter={filterContext.filter}
             />
           </tbody>

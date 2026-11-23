@@ -1,26 +1,24 @@
-export interface IData {
-  getValues: (unit?: MeasurementUnit) => DataRepresentation[];
-}
-export interface IDataObject {
-  standard: string;
-  code: string;
-  cs: number;
-  id: number;
-  od: number;
-}
-export interface DataRepresentation extends IDataObject {
-  unit: MeasurementUnit;
-}
-export interface IGetValues {}
-
 export enum Standard {
   AS = "AS568",
   JIS = "JIS",
   METRIC = "Common Metric",
 }
+
 export enum MeasurementUnit {
   MM = "mm",
   INCH = "″",
+}
+
+export interface IDataObject {
+  readonly standard: Standard;
+  readonly code: string;
+  readonly cs: number;
+  readonly id: number;
+  readonly od: number;
+}
+
+export interface DataRepresentation extends IDataObject {
+  readonly unit: MeasurementUnit;
 }
 
 export interface IDataFilter {
@@ -34,3 +32,4 @@ export interface IDataFilter {
   code?: string;
   standard?: Standard[];
 }
+

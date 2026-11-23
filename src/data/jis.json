@@ -1,0 +1,3817 @@
+[
+  {
+    "standard": "JIS",
+    "code": "G25",
+    "cs": 3.1,
+    "id": 24.4,
+    "od": 30.6
+  },
+  {
+    "standard": "JIS",
+    "code": "G30",
+    "cs": 3.1,
+    "id": 29.4,
+    "od": 35.6
+  },
+  {
+    "standard": "JIS",
+    "code": "G35",
+    "cs": 3.1,
+    "id": 34.4,
+    "od": 40.6
+  },
+  {
+    "standard": "JIS",
+    "code": "G40",
+    "cs": 3.1,
+    "id": 39.4,
+    "od": 45.6
+  },
+  {
+    "standard": "JIS",
+    "code": "G45",
+    "cs": 3.1,
+    "id": 44.4,
+    "od": 50.6
+  },
+  {
+    "standard": "JIS",
+    "code": "G50",
+    "cs": 3.1,
+    "id": 49.4,
+    "od": 55.6
+  },
+  {
+    "standard": "JIS",
+    "code": "G55",
+    "cs": 3.1,
+    "id": 54.4,
+    "od": 60.6
+  },
+  {
+    "standard": "JIS",
+    "code": "G60",
+    "cs": 3.1,
+    "id": 59.4,
+    "od": 65.6
+  },
+  {
+    "standard": "JIS",
+    "code": "G65",
+    "cs": 3.1,
+    "id": 64.4,
+    "od": 70.6
+  },
+  {
+    "standard": "JIS",
+    "code": "G70",
+    "cs": 3.1,
+    "id": 69.4,
+    "od": 75.6
+  },
+  {
+    "standard": "JIS",
+    "code": "G75",
+    "cs": 3.1,
+    "id": 74.4,
+    "od": 80.6
+  },
+  {
+    "standard": "JIS",
+    "code": "G80",
+    "cs": 3.1,
+    "id": 79.4,
+    "od": 85.6
+  },
+  {
+    "standard": "JIS",
+    "code": "G85",
+    "cs": 3.1,
+    "id": 84.4,
+    "od": 90.6
+  },
+  {
+    "standard": "JIS",
+    "code": "G90",
+    "cs": 3.1,
+    "id": 89.4,
+    "od": 95.6
+  },
+  {
+    "standard": "JIS",
+    "code": "G95",
+    "cs": 3.1,
+    "id": 94.4,
+    "od": 100.6
+  },
+  {
+    "standard": "JIS",
+    "code": "G100",
+    "cs": 3.1,
+    "id": 99.4,
+    "od": 105.6
+  },
+  {
+    "standard": "JIS",
+    "code": "G105",
+    "cs": 3.1,
+    "id": 104.4,
+    "od": 110.6
+  },
+  {
+    "standard": "JIS",
+    "code": "G110",
+    "cs": 3.1,
+    "id": 109.4,
+    "od": 115.6
+  },
+  {
+    "standard": "JIS",
+    "code": "G115",
+    "cs": 3.1,
+    "id": 114.4,
+    "od": 120.6
+  },
+  {
+    "standard": "JIS",
+    "code": "G120",
+    "cs": 3.1,
+    "id": 119.4,
+    "od": 125.6
+  },
+  {
+    "standard": "JIS",
+    "code": "G125",
+    "cs": 3.1,
+    "id": 124.4,
+    "od": 130.6
+  },
+  {
+    "standard": "JIS",
+    "code": "G130",
+    "cs": 3.1,
+    "id": 129.4,
+    "od": 135.6
+  },
+  {
+    "standard": "JIS",
+    "code": "G135",
+    "cs": 3.1,
+    "id": 134.4,
+    "od": 140.6
+  },
+  {
+    "standard": "JIS",
+    "code": "G140",
+    "cs": 3.1,
+    "id": 139.4,
+    "od": 145.6
+  },
+  {
+    "standard": "JIS",
+    "code": "G145",
+    "cs": 3.1,
+    "id": 144.4,
+    "od": 150.6
+  },
+  {
+    "standard": "JIS",
+    "code": "G150",
+    "cs": 5.7,
+    "id": 149.3,
+    "od": 160.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G155",
+    "cs": 5.7,
+    "id": 154.3,
+    "od": 165.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G160",
+    "cs": 5.7,
+    "id": 159.3,
+    "od": 170.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G165",
+    "cs": 5.7,
+    "id": 164.3,
+    "od": 175.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G170",
+    "cs": 5.7,
+    "id": 169.3,
+    "od": 180.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G175",
+    "cs": 5.7,
+    "id": 174.3,
+    "od": 185.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G180",
+    "cs": 5.7,
+    "id": 179.3,
+    "od": 190.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G185",
+    "cs": 5.7,
+    "id": 184.3,
+    "od": 195.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G190",
+    "cs": 5.7,
+    "id": 189.3,
+    "od": 200.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G195",
+    "cs": 5.7,
+    "id": 194.3,
+    "od": 205.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G200",
+    "cs": 5.7,
+    "id": 199.3,
+    "od": 210.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G210",
+    "cs": 5.7,
+    "id": 209.3,
+    "od": 220.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G220",
+    "cs": 5.7,
+    "id": 219.3,
+    "od": 230.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G230",
+    "cs": 5.7,
+    "id": 229.3,
+    "od": 240.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G240",
+    "cs": 5.7,
+    "id": 239.3,
+    "od": 250.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G250",
+    "cs": 5.7,
+    "id": 249.3,
+    "od": 260.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G255",
+    "cs": 5.7,
+    "id": 254.3,
+    "od": 265.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G260",
+    "cs": 5.7,
+    "id": 259.3,
+    "od": 270.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G270",
+    "cs": 5.7,
+    "id": 269.3,
+    "od": 280.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G280",
+    "cs": 5.7,
+    "id": 279.3,
+    "od": 290.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G290",
+    "cs": 5.7,
+    "id": 289.3,
+    "od": 300.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G300",
+    "cs": 5.7,
+    "id": 299.3,
+    "od": 310.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G305",
+    "cs": 5.7,
+    "id": 304.3,
+    "od": 315.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G310",
+    "cs": 5.7,
+    "id": 309.3,
+    "od": 320.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G315",
+    "cs": 5.7,
+    "id": 314.3,
+    "od": 325.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G320",
+    "cs": 5.7,
+    "id": 319.3,
+    "od": 330.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G325",
+    "cs": 5.7,
+    "id": 324.3,
+    "od": 335.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G330",
+    "cs": 5.7,
+    "id": 329.3,
+    "od": 340.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G335",
+    "cs": 5.7,
+    "id": 334.3,
+    "od": 345.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G340",
+    "cs": 5.7,
+    "id": 339.3,
+    "od": 350.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G345",
+    "cs": 5.7,
+    "id": 344.3,
+    "od": 355.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G350",
+    "cs": 5.7,
+    "id": 349.3,
+    "od": 360.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G355",
+    "cs": 5.7,
+    "id": 354.3,
+    "od": 365.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G360",
+    "cs": 5.7,
+    "id": 359.3,
+    "od": 370.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G365",
+    "cs": 5.7,
+    "id": 364.3,
+    "od": 375.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G370",
+    "cs": 5.7,
+    "id": 369.3,
+    "od": 380.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G375",
+    "cs": 5.7,
+    "id": 374.3,
+    "od": 385.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G380",
+    "cs": 5.7,
+    "id": 379.3,
+    "od": 390.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G385",
+    "cs": 5.7,
+    "id": 384.3,
+    "od": 395.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G390",
+    "cs": 5.7,
+    "id": 389.3,
+    "od": 400.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G395",
+    "cs": 5.7,
+    "id": 394.3,
+    "od": 405.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G400",
+    "cs": 5.7,
+    "id": 399.3,
+    "od": 410.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G405",
+    "cs": 5.7,
+    "id": 404.3,
+    "od": 415.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G410",
+    "cs": 5.7,
+    "id": 409.3,
+    "od": 420.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G415",
+    "cs": 5.7,
+    "id": 414.3,
+    "od": 425.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G420",
+    "cs": 5.7,
+    "id": 419.3,
+    "od": 430.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G425",
+    "cs": 5.7,
+    "id": 424.3,
+    "od": 435.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G430",
+    "cs": 5.7,
+    "id": 429.3,
+    "od": 440.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G435",
+    "cs": 5.7,
+    "id": 434.3,
+    "od": 445.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G440",
+    "cs": 5.7,
+    "id": 439.3,
+    "od": 450.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G445",
+    "cs": 5.7,
+    "id": 444.3,
+    "od": 455.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G450",
+    "cs": 5.7,
+    "id": 449.3,
+    "od": 460.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G455",
+    "cs": 5.7,
+    "id": 454.3,
+    "od": 465.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G460",
+    "cs": 5.7,
+    "id": 459.3,
+    "od": 470.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G465",
+    "cs": 5.7,
+    "id": 464.3,
+    "od": 475.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G470",
+    "cs": 5.7,
+    "id": 469.3,
+    "od": 480.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G475",
+    "cs": 5.7,
+    "id": 474.3,
+    "od": 485.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G480",
+    "cs": 5.7,
+    "id": 479.3,
+    "od": 490.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G485",
+    "cs": 5.7,
+    "id": 484.3,
+    "od": 495.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G490",
+    "cs": 5.7,
+    "id": 489.3,
+    "od": 500.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G495",
+    "cs": 5.7,
+    "id": 494.3,
+    "od": 505.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G500",
+    "cs": 5.7,
+    "id": 499.3,
+    "od": 510.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G510",
+    "cs": 5.7,
+    "id": 509.3,
+    "od": 520.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G520",
+    "cs": 5.7,
+    "id": 519.3,
+    "od": 530.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G530",
+    "cs": 5.7,
+    "id": 529.3,
+    "od": 540.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G540",
+    "cs": 5.7,
+    "id": 539.3,
+    "od": 550.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G550",
+    "cs": 5.7,
+    "id": 549.3,
+    "od": 560.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G560",
+    "cs": 5.7,
+    "id": 559.3,
+    "od": 570.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G570",
+    "cs": 5.7,
+    "id": 569.3,
+    "od": 580.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G580",
+    "cs": 5.7,
+    "id": 579.3,
+    "od": 590.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G590",
+    "cs": 5.7,
+    "id": 589.3,
+    "od": 600.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G600",
+    "cs": 5.7,
+    "id": 599.3,
+    "od": 610.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G605",
+    "cs": 5.7,
+    "id": 604.3,
+    "od": 615.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G860",
+    "cs": 5.7,
+    "id": 859.3,
+    "od": 870.7
+  },
+  {
+    "standard": "JIS",
+    "code": "G910",
+    "cs": 5.7,
+    "id": 909.3,
+    "od": 920.7
+  },
+  {
+    "standard": "JIS",
+    "code": "GM005",
+    "cs": 5,
+    "id": 5,
+    "od": 15
+  },
+  {
+    "standard": "JIS",
+    "code": "GM010",
+    "cs": 5,
+    "id": 10,
+    "od": 20
+  },
+  {
+    "standard": "JIS",
+    "code": "GM015",
+    "cs": 5,
+    "id": 15,
+    "od": 25
+  },
+  {
+    "standard": "JIS",
+    "code": "GM020",
+    "cs": 5,
+    "id": 20,
+    "od": 30
+  },
+  {
+    "standard": "JIS",
+    "code": "GM025",
+    "cs": 5,
+    "id": 25,
+    "od": 35
+  },
+  {
+    "standard": "JIS",
+    "code": "GM030",
+    "cs": 5,
+    "id": 30,
+    "od": 40
+  },
+  {
+    "standard": "JIS",
+    "code": "GM035",
+    "cs": 5,
+    "id": 35,
+    "od": 45
+  },
+  {
+    "standard": "JIS",
+    "code": "GM040",
+    "cs": 5,
+    "id": 40,
+    "od": 50
+  },
+  {
+    "standard": "JIS",
+    "code": "GM045",
+    "cs": 5,
+    "id": 45,
+    "od": 55
+  },
+  {
+    "standard": "JIS",
+    "code": "GM050",
+    "cs": 5,
+    "id": 50,
+    "od": 60
+  },
+  {
+    "standard": "JIS",
+    "code": "GM055",
+    "cs": 5,
+    "id": 55,
+    "od": 65
+  },
+  {
+    "standard": "JIS",
+    "code": "GM060",
+    "cs": 5,
+    "id": 60,
+    "od": 70
+  },
+  {
+    "standard": "JIS",
+    "code": "GM065",
+    "cs": 5,
+    "id": 65,
+    "od": 75
+  },
+  {
+    "standard": "JIS",
+    "code": "GM070",
+    "cs": 5,
+    "id": 70,
+    "od": 80
+  },
+  {
+    "standard": "JIS",
+    "code": "GM075",
+    "cs": 5,
+    "id": 75,
+    "od": 85
+  },
+  {
+    "standard": "JIS",
+    "code": "GM080",
+    "cs": 5,
+    "id": 80,
+    "od": 90
+  },
+  {
+    "standard": "JIS",
+    "code": "GM085",
+    "cs": 5,
+    "id": 85,
+    "od": 95
+  },
+  {
+    "standard": "JIS",
+    "code": "GM090",
+    "cs": 5,
+    "id": 90,
+    "od": 100
+  },
+  {
+    "standard": "JIS",
+    "code": "GM095",
+    "cs": 5,
+    "id": 95,
+    "od": 105
+  },
+  {
+    "standard": "JIS",
+    "code": "GM100",
+    "cs": 5,
+    "id": 100,
+    "od": 110
+  },
+  {
+    "standard": "JIS",
+    "code": "GM105",
+    "cs": 5,
+    "id": 105,
+    "od": 115
+  },
+  {
+    "standard": "JIS",
+    "code": "GM110",
+    "cs": 5,
+    "id": 110,
+    "od": 120
+  },
+  {
+    "standard": "JIS",
+    "code": "GM115",
+    "cs": 5,
+    "id": 115,
+    "od": 125
+  },
+  {
+    "standard": "JIS",
+    "code": "GM120",
+    "cs": 5,
+    "id": 120,
+    "od": 130
+  },
+  {
+    "standard": "JIS",
+    "code": "GM125",
+    "cs": 5,
+    "id": 125,
+    "od": 135
+  },
+  {
+    "standard": "JIS",
+    "code": "GM130",
+    "cs": 5,
+    "id": 130,
+    "od": 140
+  },
+  {
+    "standard": "JIS",
+    "code": "GM135",
+    "cs": 5,
+    "id": 135,
+    "od": 145
+  },
+  {
+    "standard": "JIS",
+    "code": "GM140",
+    "cs": 5,
+    "id": 140,
+    "od": 150
+  },
+  {
+    "standard": "JIS",
+    "code": "GM145",
+    "cs": 5,
+    "id": 145,
+    "od": 155
+  },
+  {
+    "standard": "JIS",
+    "code": "GM150",
+    "cs": 5,
+    "id": 150,
+    "od": 160
+  },
+  {
+    "standard": "JIS",
+    "code": "GM155",
+    "cs": 5,
+    "id": 155,
+    "od": 165
+  },
+  {
+    "standard": "JIS",
+    "code": "GM160",
+    "cs": 5,
+    "id": 160,
+    "od": 170
+  },
+  {
+    "standard": "JIS",
+    "code": "GM165",
+    "cs": 5,
+    "id": 165,
+    "od": 175
+  },
+  {
+    "standard": "JIS",
+    "code": "GM170",
+    "cs": 5,
+    "id": 170,
+    "od": 180
+  },
+  {
+    "standard": "JIS",
+    "code": "GM175",
+    "cs": 5,
+    "id": 175,
+    "od": 185
+  },
+  {
+    "standard": "JIS",
+    "code": "GM180",
+    "cs": 5,
+    "id": 180,
+    "od": 190
+  },
+  {
+    "standard": "JIS",
+    "code": "GM185",
+    "cs": 5,
+    "id": 185,
+    "od": 195
+  },
+  {
+    "standard": "JIS",
+    "code": "GM190",
+    "cs": 5,
+    "id": 190,
+    "od": 200
+  },
+  {
+    "standard": "JIS",
+    "code": "GM195",
+    "cs": 5,
+    "id": 195,
+    "od": 205
+  },
+  {
+    "standard": "JIS",
+    "code": "GM200",
+    "cs": 5,
+    "id": 200,
+    "od": 210
+  },
+  {
+    "standard": "JIS",
+    "code": "GM205",
+    "cs": 5,
+    "id": 205,
+    "od": 215
+  },
+  {
+    "standard": "JIS",
+    "code": "GM210",
+    "cs": 5,
+    "id": 210,
+    "od": 220
+  },
+  {
+    "standard": "JIS",
+    "code": "GM215",
+    "cs": 5,
+    "id": 215,
+    "od": 225
+  },
+  {
+    "standard": "JIS",
+    "code": "GM220",
+    "cs": 5,
+    "id": 220,
+    "od": 230
+  },
+  {
+    "standard": "JIS",
+    "code": "GM225",
+    "cs": 5,
+    "id": 225,
+    "od": 235
+  },
+  {
+    "standard": "JIS",
+    "code": "GM230",
+    "cs": 5,
+    "id": 230,
+    "od": 240
+  },
+  {
+    "standard": "JIS",
+    "code": "GM235",
+    "cs": 5,
+    "id": 235,
+    "od": 245
+  },
+  {
+    "standard": "JIS",
+    "code": "GM240",
+    "cs": 5,
+    "id": 240,
+    "od": 250
+  },
+  {
+    "standard": "JIS",
+    "code": "GM245",
+    "cs": 5,
+    "id": 245,
+    "od": 255
+  },
+  {
+    "standard": "JIS",
+    "code": "GM250",
+    "cs": 5,
+    "id": 250,
+    "od": 260
+  },
+  {
+    "standard": "JIS",
+    "code": "GM255",
+    "cs": 5,
+    "id": 255,
+    "od": 265
+  },
+  {
+    "standard": "JIS",
+    "code": "GM260",
+    "cs": 5,
+    "id": 260,
+    "od": 270
+  },
+  {
+    "standard": "JIS",
+    "code": "GM265",
+    "cs": 5,
+    "id": 265,
+    "od": 275
+  },
+  {
+    "standard": "JIS",
+    "code": "GM270",
+    "cs": 5,
+    "id": 270,
+    "od": 280
+  },
+  {
+    "standard": "JIS",
+    "code": "GM275",
+    "cs": 5,
+    "id": 275,
+    "od": 285
+  },
+  {
+    "standard": "JIS",
+    "code": "GM280",
+    "cs": 5,
+    "id": 280,
+    "od": 290
+  },
+  {
+    "standard": "JIS",
+    "code": "GM285",
+    "cs": 5,
+    "id": 285,
+    "od": 295
+  },
+  {
+    "standard": "JIS",
+    "code": "GM290",
+    "cs": 5,
+    "id": 290,
+    "od": 300
+  },
+  {
+    "standard": "JIS",
+    "code": "GM295",
+    "cs": 5,
+    "id": 295,
+    "od": 305
+  },
+  {
+    "standard": "JIS",
+    "code": "GM300",
+    "cs": 5,
+    "id": 300,
+    "od": 310
+  },
+  {
+    "standard": "JIS",
+    "code": "GS150",
+    "cs": 3.1,
+    "id": 149.3,
+    "od": 155.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS155",
+    "cs": 3.1,
+    "id": 154.3,
+    "od": 160.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS160",
+    "cs": 3.1,
+    "id": 159.3,
+    "od": 165.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS165",
+    "cs": 3.1,
+    "id": 164.3,
+    "od": 170.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS170",
+    "cs": 3.1,
+    "id": 169.3,
+    "od": 175.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS175",
+    "cs": 3.1,
+    "id": 174.3,
+    "od": 180.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS180",
+    "cs": 3.1,
+    "id": 179.3,
+    "od": 185.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS185",
+    "cs": 3.1,
+    "id": 184.3,
+    "od": 190.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS190",
+    "cs": 3.1,
+    "id": 189.3,
+    "od": 195.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS195",
+    "cs": 3.1,
+    "id": 194.3,
+    "od": 200.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS200",
+    "cs": 3.1,
+    "id": 199.3,
+    "od": 205.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS205",
+    "cs": 3.1,
+    "id": 204.3,
+    "od": 210.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS210",
+    "cs": 3.1,
+    "id": 209.3,
+    "od": 215.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS215",
+    "cs": 3.1,
+    "id": 214.3,
+    "od": 220.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS220",
+    "cs": 3.1,
+    "id": 219.3,
+    "od": 225.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS225",
+    "cs": 3.1,
+    "id": 224.3,
+    "od": 230.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS230",
+    "cs": 3.1,
+    "id": 229.3,
+    "od": 235.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS235",
+    "cs": 3.1,
+    "id": 234.3,
+    "od": 240.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS240",
+    "cs": 3.1,
+    "id": 239.3,
+    "od": 245.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS245",
+    "cs": 3.1,
+    "id": 244.3,
+    "od": 250.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS250",
+    "cs": 3.1,
+    "id": 249.3,
+    "od": 255.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS255",
+    "cs": 3.1,
+    "id": 254.3,
+    "od": 260.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS260",
+    "cs": 3.1,
+    "id": 259.3,
+    "od": 265.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS265",
+    "cs": 3.1,
+    "id": 264.3,
+    "od": 270.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS270",
+    "cs": 3.1,
+    "id": 269.3,
+    "od": 275.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS275",
+    "cs": 3.1,
+    "id": 274.3,
+    "od": 280.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS280",
+    "cs": 3.1,
+    "id": 279.3,
+    "od": 285.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS285",
+    "cs": 3.1,
+    "id": 284.3,
+    "od": 290.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS290",
+    "cs": 3.1,
+    "id": 289.3,
+    "od": 295.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS295",
+    "cs": 3.1,
+    "id": 294.3,
+    "od": 300.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS300",
+    "cs": 3.1,
+    "id": 299.3,
+    "od": 305.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS305",
+    "cs": 3.1,
+    "id": 304.3,
+    "od": 310.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS310",
+    "cs": 3.1,
+    "id": 309.3,
+    "od": 315.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS315",
+    "cs": 3.1,
+    "id": 314.3,
+    "od": 320.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS320",
+    "cs": 3.1,
+    "id": 319.3,
+    "od": 325.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS325",
+    "cs": 3.1,
+    "id": 324.3,
+    "od": 330.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS330",
+    "cs": 3.1,
+    "id": 329.3,
+    "od": 335.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS335",
+    "cs": 3.1,
+    "id": 334.3,
+    "od": 340.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS340",
+    "cs": 3.1,
+    "id": 339.3,
+    "od": 345.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS345",
+    "cs": 3.1,
+    "id": 344.3,
+    "od": 350.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS350",
+    "cs": 3.1,
+    "id": 349.3,
+    "od": 355.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS355",
+    "cs": 3.1,
+    "id": 354.3,
+    "od": 360.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS360",
+    "cs": 3.1,
+    "id": 359.3,
+    "od": 365.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS365",
+    "cs": 3.1,
+    "id": 364.3,
+    "od": 370.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS370",
+    "cs": 3.1,
+    "id": 369.3,
+    "od": 375.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS375",
+    "cs": 3.1,
+    "id": 374.3,
+    "od": 380.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS380",
+    "cs": 3.1,
+    "id": 379.3,
+    "od": 385.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS385",
+    "cs": 3.1,
+    "id": 384.3,
+    "od": 390.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS390",
+    "cs": 3.1,
+    "id": 389.3,
+    "od": 395.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS395",
+    "cs": 3.1,
+    "id": 394.3,
+    "od": 400.5
+  },
+  {
+    "standard": "JIS",
+    "code": "GS400",
+    "cs": 3.1,
+    "id": 399.3,
+    "od": 405.5
+  },
+  {
+    "standard": "JIS",
+    "code": "P3",
+    "cs": 1.9,
+    "id": 2.8,
+    "od": 6.6
+  },
+  {
+    "standard": "JIS",
+    "code": "P4",
+    "cs": 1.9,
+    "id": 3.8,
+    "od": 7.6
+  },
+  {
+    "standard": "JIS",
+    "code": "P5",
+    "cs": 1.9,
+    "id": 4.8,
+    "od": 8.6
+  },
+  {
+    "standard": "JIS",
+    "code": "P6",
+    "cs": 1.9,
+    "id": 5.8,
+    "od": 9.6
+  },
+  {
+    "standard": "JIS",
+    "code": "P7",
+    "cs": 1.9,
+    "id": 6.8,
+    "od": 10.6
+  },
+  {
+    "standard": "JIS",
+    "code": "P8",
+    "cs": 1.9,
+    "id": 7.8,
+    "od": 11.6
+  },
+  {
+    "standard": "JIS",
+    "code": "P9",
+    "cs": 1.9,
+    "id": 8.8,
+    "od": 12.6
+  },
+  {
+    "standard": "JIS",
+    "code": "P10",
+    "cs": 1.9,
+    "id": 9.8,
+    "od": 13.6
+  },
+  {
+    "standard": "JIS",
+    "code": "P10A",
+    "cs": 2.4,
+    "id": 9.8,
+    "od": 14.6
+  },
+  {
+    "standard": "JIS",
+    "code": "P11",
+    "cs": 2.4,
+    "id": 10.8,
+    "od": 15.6
+  },
+  {
+    "standard": "JIS",
+    "code": "P11.2",
+    "cs": 2.4,
+    "id": 11,
+    "od": 15.8
+  },
+  {
+    "standard": "JIS",
+    "code": "P12",
+    "cs": 2.4,
+    "id": 11.8,
+    "od": 16.6
+  },
+  {
+    "standard": "JIS",
+    "code": "P12.5",
+    "cs": 2.4,
+    "id": 12.3,
+    "od": 17.1
+  },
+  {
+    "standard": "JIS",
+    "code": "P14",
+    "cs": 2.4,
+    "id": 13.8,
+    "od": 18.6
+  },
+  {
+    "standard": "JIS",
+    "code": "P15",
+    "cs": 2.4,
+    "id": 14.8,
+    "od": 19.6
+  },
+  {
+    "standard": "JIS",
+    "code": "P16",
+    "cs": 2.4,
+    "id": 15.8,
+    "od": 20.6
+  },
+  {
+    "standard": "JIS",
+    "code": "P18",
+    "cs": 2.4,
+    "id": 17.8,
+    "od": 22.6
+  },
+  {
+    "standard": "JIS",
+    "code": "P20",
+    "cs": 2.4,
+    "id": 19.8,
+    "od": 24.6
+  },
+  {
+    "standard": "JIS",
+    "code": "P21",
+    "cs": 2.4,
+    "id": 20.8,
+    "od": 25.6
+  },
+  {
+    "standard": "JIS",
+    "code": "P22",
+    "cs": 2.4,
+    "id": 21.8,
+    "od": 26.6
+  },
+  {
+    "standard": "JIS",
+    "code": "P22.4",
+    "cs": 3.5,
+    "id": 22.1,
+    "od": 29.1
+  },
+  {
+    "standard": "JIS",
+    "code": "P22A",
+    "cs": 3.5,
+    "id": 21.7,
+    "od": 28.7
+  },
+  {
+    "standard": "JIS",
+    "code": "P24",
+    "cs": 3.5,
+    "id": 23.7,
+    "od": 30.7
+  },
+  {
+    "standard": "JIS",
+    "code": "P25",
+    "cs": 3.5,
+    "id": 24.7,
+    "od": 31.7
+  },
+  {
+    "standard": "JIS",
+    "code": "P25.5",
+    "cs": 3.5,
+    "id": 25.2,
+    "od": 32.2
+  },
+  {
+    "standard": "JIS",
+    "code": "P26",
+    "cs": 3.5,
+    "id": 25.7,
+    "od": 32.7
+  },
+  {
+    "standard": "JIS",
+    "code": "P28",
+    "cs": 3.5,
+    "id": 27.7,
+    "od": 34.7
+  },
+  {
+    "standard": "JIS",
+    "code": "P29",
+    "cs": 3.5,
+    "id": 28.7,
+    "od": 35.7
+  },
+  {
+    "standard": "JIS",
+    "code": "P29.5",
+    "cs": 3.5,
+    "id": 29.2,
+    "od": 36.2
+  },
+  {
+    "standard": "JIS",
+    "code": "P30",
+    "cs": 3.5,
+    "id": 29.7,
+    "od": 36.7
+  },
+  {
+    "standard": "JIS",
+    "code": "P31",
+    "cs": 3.5,
+    "id": 30.7,
+    "od": 37.7
+  },
+  {
+    "standard": "JIS",
+    "code": "P31.5",
+    "cs": 3.5,
+    "id": 31.2,
+    "od": 38.2
+  },
+  {
+    "standard": "JIS",
+    "code": "P32",
+    "cs": 3.5,
+    "id": 31.7,
+    "od": 38.7
+  },
+  {
+    "standard": "JIS",
+    "code": "P34",
+    "cs": 3.5,
+    "id": 33.7,
+    "od": 40.7
+  },
+  {
+    "standard": "JIS",
+    "code": "P35",
+    "cs": 3.5,
+    "id": 34.7,
+    "od": 41.7
+  },
+  {
+    "standard": "JIS",
+    "code": "P35.5",
+    "cs": 3.5,
+    "id": 35.2,
+    "od": 42.2
+  },
+  {
+    "standard": "JIS",
+    "code": "P36",
+    "cs": 3.5,
+    "id": 35.7,
+    "od": 42.7
+  },
+  {
+    "standard": "JIS",
+    "code": "P38",
+    "cs": 3.5,
+    "id": 37.7,
+    "od": 44.7
+  },
+  {
+    "standard": "JIS",
+    "code": "P39",
+    "cs": 3.5,
+    "id": 38.7,
+    "od": 45.7
+  },
+  {
+    "standard": "JIS",
+    "code": "P40",
+    "cs": 3.5,
+    "id": 39.7,
+    "od": 46.7
+  },
+  {
+    "standard": "JIS",
+    "code": "P41",
+    "cs": 3.5,
+    "id": 40.7,
+    "od": 47.7
+  },
+  {
+    "standard": "JIS",
+    "code": "P42",
+    "cs": 3.5,
+    "id": 41.7,
+    "od": 48.7
+  },
+  {
+    "standard": "JIS",
+    "code": "P44",
+    "cs": 3.5,
+    "id": 43.7,
+    "od": 50.7
+  },
+  {
+    "standard": "JIS",
+    "code": "P45",
+    "cs": 3.5,
+    "id": 44.7,
+    "od": 51.7
+  },
+  {
+    "standard": "JIS",
+    "code": "P46",
+    "cs": 3.5,
+    "id": 45.7,
+    "od": 52.7
+  },
+  {
+    "standard": "JIS",
+    "code": "P48",
+    "cs": 3.5,
+    "id": 47.7,
+    "od": 54.7
+  },
+  {
+    "standard": "JIS",
+    "code": "P48A",
+    "cs": 5.7,
+    "id": 47.6,
+    "od": 59
+  },
+  {
+    "standard": "JIS",
+    "code": "P49",
+    "cs": 3.5,
+    "id": 48.7,
+    "od": 55.7
+  },
+  {
+    "standard": "JIS",
+    "code": "P50",
+    "cs": 3.5,
+    "id": 49.7,
+    "od": 56.7
+  },
+  {
+    "standard": "JIS",
+    "code": "P50A",
+    "cs": 5.7,
+    "id": 49.6,
+    "od": 61
+  },
+  {
+    "standard": "JIS",
+    "code": "P52",
+    "cs": 5.7,
+    "id": 51.6,
+    "od": 63
+  },
+  {
+    "standard": "JIS",
+    "code": "P53",
+    "cs": 5.7,
+    "id": 52.6,
+    "od": 64
+  },
+  {
+    "standard": "JIS",
+    "code": "P55",
+    "cs": 5.7,
+    "id": 54.6,
+    "od": 66
+  },
+  {
+    "standard": "JIS",
+    "code": "P56",
+    "cs": 5.7,
+    "id": 55.6,
+    "od": 67
+  },
+  {
+    "standard": "JIS",
+    "code": "P58",
+    "cs": 5.7,
+    "id": 57.6,
+    "od": 69
+  },
+  {
+    "standard": "JIS",
+    "code": "P60",
+    "cs": 5.7,
+    "id": 59.6,
+    "od": 71
+  },
+  {
+    "standard": "JIS",
+    "code": "P62",
+    "cs": 5.7,
+    "id": 61.6,
+    "od": 73
+  },
+  {
+    "standard": "JIS",
+    "code": "P63",
+    "cs": 5.7,
+    "id": 62.6,
+    "od": 74
+  },
+  {
+    "standard": "JIS",
+    "code": "P65",
+    "cs": 5.7,
+    "id": 64.6,
+    "od": 76
+  },
+  {
+    "standard": "JIS",
+    "code": "P67",
+    "cs": 5.7,
+    "id": 66.6,
+    "od": 78
+  },
+  {
+    "standard": "JIS",
+    "code": "P70",
+    "cs": 5.7,
+    "id": 69.6,
+    "od": 81
+  },
+  {
+    "standard": "JIS",
+    "code": "P71",
+    "cs": 5.7,
+    "id": 70.6,
+    "od": 82
+  },
+  {
+    "standard": "JIS",
+    "code": "P75",
+    "cs": 5.7,
+    "id": 74.6,
+    "od": 86
+  },
+  {
+    "standard": "JIS",
+    "code": "P80",
+    "cs": 5.7,
+    "id": 79.6,
+    "od": 91
+  },
+  {
+    "standard": "JIS",
+    "code": "P85",
+    "cs": 5.7,
+    "id": 84.6,
+    "od": 96
+  },
+  {
+    "standard": "JIS",
+    "code": "P90",
+    "cs": 5.7,
+    "id": 89.6,
+    "od": 101
+  },
+  {
+    "standard": "JIS",
+    "code": "P95",
+    "cs": 5.7,
+    "id": 94.6,
+    "od": 106
+  },
+  {
+    "standard": "JIS",
+    "code": "P100",
+    "cs": 5.7,
+    "id": 99.6,
+    "od": 111
+  },
+  {
+    "standard": "JIS",
+    "code": "P102",
+    "cs": 5.7,
+    "id": 101.6,
+    "od": 113
+  },
+  {
+    "standard": "JIS",
+    "code": "P105",
+    "cs": 5.7,
+    "id": 104.6,
+    "od": 116
+  },
+  {
+    "standard": "JIS",
+    "code": "P110",
+    "cs": 5.7,
+    "id": 109.6,
+    "od": 121
+  },
+  {
+    "standard": "JIS",
+    "code": "P112",
+    "cs": 5.7,
+    "id": 111.6,
+    "od": 123
+  },
+  {
+    "standard": "JIS",
+    "code": "P115",
+    "cs": 5.7,
+    "id": 114.6,
+    "od": 126
+  },
+  {
+    "standard": "JIS",
+    "code": "P120",
+    "cs": 5.7,
+    "id": 119.6,
+    "od": 131
+  },
+  {
+    "standard": "JIS",
+    "code": "P125",
+    "cs": 5.7,
+    "id": 124.6,
+    "od": 136
+  },
+  {
+    "standard": "JIS",
+    "code": "P130",
+    "cs": 5.7,
+    "id": 129.6,
+    "od": 141
+  },
+  {
+    "standard": "JIS",
+    "code": "P132",
+    "cs": 5.7,
+    "id": 131.6,
+    "od": 143
+  },
+  {
+    "standard": "JIS",
+    "code": "P135",
+    "cs": 5.7,
+    "id": 134.6,
+    "od": 146
+  },
+  {
+    "standard": "JIS",
+    "code": "P140",
+    "cs": 5.7,
+    "id": 139.6,
+    "od": 151
+  },
+  {
+    "standard": "JIS",
+    "code": "P145",
+    "cs": 5.7,
+    "id": 144.6,
+    "od": 156
+  },
+  {
+    "standard": "JIS",
+    "code": "P150",
+    "cs": 5.7,
+    "id": 149.6,
+    "od": 161
+  },
+  {
+    "standard": "JIS",
+    "code": "P150A",
+    "cs": 8.4,
+    "id": 149.5,
+    "od": 166.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P155",
+    "cs": 8.4,
+    "id": 154.5,
+    "od": 171.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P160",
+    "cs": 8.4,
+    "id": 159.5,
+    "od": 176.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P165",
+    "cs": 8.4,
+    "id": 164.5,
+    "od": 181.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P170",
+    "cs": 8.4,
+    "id": 169.5,
+    "od": 186.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P175",
+    "cs": 8.4,
+    "id": 174.5,
+    "od": 191.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P180",
+    "cs": 8.4,
+    "id": 179.5,
+    "od": 196.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P185",
+    "cs": 8.4,
+    "id": 184.5,
+    "od": 201.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P190",
+    "cs": 8.4,
+    "id": 189.5,
+    "od": 206.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P195",
+    "cs": 8.4,
+    "id": 194.5,
+    "od": 211.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P200",
+    "cs": 8.4,
+    "id": 199.5,
+    "od": 216.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P205",
+    "cs": 8.4,
+    "id": 204.5,
+    "od": 221.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P209",
+    "cs": 8.4,
+    "id": 208.5,
+    "od": 225.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P210",
+    "cs": 8.4,
+    "id": 209.5,
+    "od": 226.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P215",
+    "cs": 8.4,
+    "id": 214.5,
+    "od": 231.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P220",
+    "cs": 8.4,
+    "id": 219.5,
+    "od": 236.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P225",
+    "cs": 8.4,
+    "id": 224.5,
+    "od": 241.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P230",
+    "cs": 8.4,
+    "id": 229.5,
+    "od": 246.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P235",
+    "cs": 8.4,
+    "id": 234.5,
+    "od": 251.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P240",
+    "cs": 8.4,
+    "id": 239.5,
+    "od": 256.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P245",
+    "cs": 8.4,
+    "id": 244.5,
+    "od": 261.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P250",
+    "cs": 8.4,
+    "id": 249.5,
+    "od": 266.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P255",
+    "cs": 8.4,
+    "id": 254.5,
+    "od": 271.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P260",
+    "cs": 8.4,
+    "id": 259.5,
+    "od": 276.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P265",
+    "cs": 8.4,
+    "id": 264.5,
+    "od": 281.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P270",
+    "cs": 8.4,
+    "id": 269.5,
+    "od": 286.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P275",
+    "cs": 8.4,
+    "id": 274.5,
+    "od": 291.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P280",
+    "cs": 8.4,
+    "id": 279.5,
+    "od": 296.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P285",
+    "cs": 8.4,
+    "id": 284.5,
+    "od": 301.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P290",
+    "cs": 8.4,
+    "id": 289.5,
+    "od": 306.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P295",
+    "cs": 8.4,
+    "id": 294.5,
+    "od": 311.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P300",
+    "cs": 8.4,
+    "id": 299.5,
+    "od": 316.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P305",
+    "cs": 8.4,
+    "id": 304.5,
+    "od": 321.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P310",
+    "cs": 8.4,
+    "id": 309.5,
+    "od": 326.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P315",
+    "cs": 8.4,
+    "id": 314.5,
+    "od": 331.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P320",
+    "cs": 8.4,
+    "id": 319.5,
+    "od": 336.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P325",
+    "cs": 8.4,
+    "id": 324.5,
+    "od": 341.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P330",
+    "cs": 8.4,
+    "id": 329.5,
+    "od": 346.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P335",
+    "cs": 8.4,
+    "id": 334.5,
+    "od": 351.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P340",
+    "cs": 8.4,
+    "id": 339.5,
+    "od": 356.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P345",
+    "cs": 8.4,
+    "id": 344.5,
+    "od": 361.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P350",
+    "cs": 8.4,
+    "id": 349.5,
+    "od": 366.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P355",
+    "cs": 8.4,
+    "id": 354.5,
+    "od": 371.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P360",
+    "cs": 8.4,
+    "id": 359.5,
+    "od": 376.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P365",
+    "cs": 8.4,
+    "id": 364.5,
+    "od": 381.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P370",
+    "cs": 8.4,
+    "id": 369.5,
+    "od": 386.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P375",
+    "cs": 8.4,
+    "id": 374.5,
+    "od": 391.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P380",
+    "cs": 8.4,
+    "id": 379.5,
+    "od": 396.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P385",
+    "cs": 8.4,
+    "id": 384.5,
+    "od": 401.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P390",
+    "cs": 8.4,
+    "id": 389.5,
+    "od": 406.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P395",
+    "cs": 8.4,
+    "id": 394.5,
+    "od": 411.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P400",
+    "cs": 8.4,
+    "id": 399.5,
+    "od": 416.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P405",
+    "cs": 8.4,
+    "id": 404.5,
+    "od": 421.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P410",
+    "cs": 8.4,
+    "id": 409.5,
+    "od": 426.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P415",
+    "cs": 8.4,
+    "id": 414.5,
+    "od": 431.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P420",
+    "cs": 8.4,
+    "id": 419.5,
+    "od": 436.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P425",
+    "cs": 8.4,
+    "id": 424.5,
+    "od": 441.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P430",
+    "cs": 8.4,
+    "id": 429.5,
+    "od": 446.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P435",
+    "cs": 8.4,
+    "id": 434.5,
+    "od": 451.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P440",
+    "cs": 8.4,
+    "id": 439.5,
+    "od": 456.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P445",
+    "cs": 8.4,
+    "id": 444.5,
+    "od": 461.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P450",
+    "cs": 8.4,
+    "id": 449.5,
+    "od": 466.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P455",
+    "cs": 8.4,
+    "id": 454.5,
+    "od": 471.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P460",
+    "cs": 8.4,
+    "id": 459.5,
+    "od": 476.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P465",
+    "cs": 8.4,
+    "id": 464.5,
+    "od": 481.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P470",
+    "cs": 8.4,
+    "id": 469.5,
+    "od": 486.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P475",
+    "cs": 8.4,
+    "id": 474.5,
+    "od": 491.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P480",
+    "cs": 8.4,
+    "id": 479.5,
+    "od": 496.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P485",
+    "cs": 8.4,
+    "id": 484.5,
+    "od": 501.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P490",
+    "cs": 8.4,
+    "id": 489.5,
+    "od": 506.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P495",
+    "cs": 8.4,
+    "id": 494.5,
+    "od": 511.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P500",
+    "cs": 8.4,
+    "id": 499.5,
+    "od": 516.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P590",
+    "cs": 8.4,
+    "id": 589.5,
+    "od": 606.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P600",
+    "cs": 8.4,
+    "id": 599.5,
+    "od": 616.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P610",
+    "cs": 8.4,
+    "id": 609.5,
+    "od": 626.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P620",
+    "cs": 8.4,
+    "id": 619.5,
+    "od": 636.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P625",
+    "cs": 8.4,
+    "id": 624.5,
+    "od": 641.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P635",
+    "cs": 8.4,
+    "id": 634.5,
+    "od": 651.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P650",
+    "cs": 8.4,
+    "id": 649.5,
+    "od": 666.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P680",
+    "cs": 8.4,
+    "id": 679.5,
+    "od": 696.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P690",
+    "cs": 8.4,
+    "id": 689.5,
+    "od": 706.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P700",
+    "cs": 8.4,
+    "id": 699.5,
+    "od": 716.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P710",
+    "cs": 8.4,
+    "id": 709.5,
+    "od": 726.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P720",
+    "cs": 8.4,
+    "id": 719.5,
+    "od": 736.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P730",
+    "cs": 8.4,
+    "id": 729.5,
+    "od": 746.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P740",
+    "cs": 8.4,
+    "id": 739.5,
+    "od": 756.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P750",
+    "cs": 8.4,
+    "id": 749.5,
+    "od": 766.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P760",
+    "cs": 8.4,
+    "id": 759.5,
+    "od": 776.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P770",
+    "cs": 8.4,
+    "id": 769.5,
+    "od": 786.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P780",
+    "cs": 8.4,
+    "id": 779.5,
+    "od": 796.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P790",
+    "cs": 8.4,
+    "id": 789.5,
+    "od": 806.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P800",
+    "cs": 8.4,
+    "id": 799.5,
+    "od": 816.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P810",
+    "cs": 8.4,
+    "id": 809.5,
+    "od": 826.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P820",
+    "cs": 8.4,
+    "id": 819.5,
+    "od": 836.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P830",
+    "cs": 8.4,
+    "id": 829.5,
+    "od": 846.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P840",
+    "cs": 8.4,
+    "id": 839.5,
+    "od": 856.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P850",
+    "cs": 8.4,
+    "id": 849.5,
+    "od": 866.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P860",
+    "cs": 8.4,
+    "id": 859.5,
+    "od": 876.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P870",
+    "cs": 8.4,
+    "id": 869.5,
+    "od": 886.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P880",
+    "cs": 8.4,
+    "id": 879.5,
+    "od": 896.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P890",
+    "cs": 8.4,
+    "id": 889.5,
+    "od": 906.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P900",
+    "cs": 8.4,
+    "id": 899.5,
+    "od": 916.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P910",
+    "cs": 8.4,
+    "id": 909.5,
+    "od": 926.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P915",
+    "cs": 8.4,
+    "id": 914.5,
+    "od": 931.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P920",
+    "cs": 8.4,
+    "id": 919.5,
+    "od": 936.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P930",
+    "cs": 8.4,
+    "id": 929.5,
+    "od": 946.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P940",
+    "cs": 8.4,
+    "id": 939.5,
+    "od": 956.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P950",
+    "cs": 8.4,
+    "id": 949.5,
+    "od": 966.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P960",
+    "cs": 8.4,
+    "id": 959.5,
+    "od": 976.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P970",
+    "cs": 8.4,
+    "id": 969.5,
+    "od": 986.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P980",
+    "cs": 8.4,
+    "id": 979.5,
+    "od": 996.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P990",
+    "cs": 8.4,
+    "id": 989.5,
+    "od": 1006.3
+  },
+  {
+    "standard": "JIS",
+    "code": "P1000",
+    "cs": 8.4,
+    "id": 999.5,
+    "od": 1016.3
+  },
+  {
+    "standard": "JIS",
+    "code": "S3",
+    "cs": 1.5,
+    "id": 2.5,
+    "od": 5.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S4",
+    "cs": 1.5,
+    "id": 3.5,
+    "od": 6.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S5",
+    "cs": 1.5,
+    "id": 4.5,
+    "od": 7.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S6",
+    "cs": 1.5,
+    "id": 5.5,
+    "od": 8.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S7",
+    "cs": 1.5,
+    "id": 6.5,
+    "od": 9.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S8",
+    "cs": 1.5,
+    "id": 7.5,
+    "od": 10.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S9",
+    "cs": 1.5,
+    "id": 8.5,
+    "od": 11.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S10",
+    "cs": 1.5,
+    "id": 9.5,
+    "od": 12.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S11.2",
+    "cs": 1.5,
+    "id": 10.7,
+    "od": 13.7
+  },
+  {
+    "standard": "JIS",
+    "code": "S12",
+    "cs": 1.5,
+    "id": 11.5,
+    "od": 14.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S12.5",
+    "cs": 1.5,
+    "id": 12,
+    "od": 15
+  },
+  {
+    "standard": "JIS",
+    "code": "S14",
+    "cs": 1.5,
+    "id": 13.5,
+    "od": 16.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S15",
+    "cs": 1.5,
+    "id": 14.5,
+    "od": 17.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S16",
+    "cs": 1.5,
+    "id": 15.5,
+    "od": 18.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S18",
+    "cs": 1.5,
+    "id": 17.5,
+    "od": 20.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S20",
+    "cs": 1.5,
+    "id": 19.5,
+    "od": 22.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S22",
+    "cs": 1.5,
+    "id": 21.5,
+    "od": 24.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S22.4",
+    "cs": 2,
+    "id": 21.9,
+    "od": 25.9
+  },
+  {
+    "standard": "JIS",
+    "code": "S24",
+    "cs": 2,
+    "id": 23.5,
+    "od": 27.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S25",
+    "cs": 2,
+    "id": 24.5,
+    "od": 28.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S26",
+    "cs": 2,
+    "id": 25.5,
+    "od": 29.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S28",
+    "cs": 2,
+    "id": 27.5,
+    "od": 31.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S29",
+    "cs": 2,
+    "id": 28.5,
+    "od": 32.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S30",
+    "cs": 2,
+    "id": 29.5,
+    "od": 33.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S31.5",
+    "cs": 2,
+    "id": 31,
+    "od": 35
+  },
+  {
+    "standard": "JIS",
+    "code": "S32",
+    "cs": 2,
+    "id": 31.5,
+    "od": 35.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S34",
+    "cs": 2,
+    "id": 33.5,
+    "od": 37.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S35",
+    "cs": 2,
+    "id": 34.5,
+    "od": 38.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S35.5",
+    "cs": 2,
+    "id": 35,
+    "od": 39
+  },
+  {
+    "standard": "JIS",
+    "code": "S36",
+    "cs": 2,
+    "id": 35.5,
+    "od": 39.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S38",
+    "cs": 2,
+    "id": 37.5,
+    "od": 41.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S39",
+    "cs": 2,
+    "id": 38.5,
+    "od": 42.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S40",
+    "cs": 2,
+    "id": 39.5,
+    "od": 43.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S42",
+    "cs": 2,
+    "id": 41.5,
+    "od": 45.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S44",
+    "cs": 2,
+    "id": 43.5,
+    "od": 47.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S45",
+    "cs": 2,
+    "id": 44.5,
+    "od": 48.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S46",
+    "cs": 2,
+    "id": 45.5,
+    "od": 49.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S48",
+    "cs": 2,
+    "id": 47.5,
+    "od": 51.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S50",
+    "cs": 2,
+    "id": 49.5,
+    "od": 53.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S53",
+    "cs": 2,
+    "id": 52.5,
+    "od": 56.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S55",
+    "cs": 2,
+    "id": 54.5,
+    "od": 58.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S56",
+    "cs": 2,
+    "id": 55.5,
+    "od": 59.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S60",
+    "cs": 2,
+    "id": 59.5,
+    "od": 63.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S63",
+    "cs": 2,
+    "id": 62.5,
+    "od": 66.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S65",
+    "cs": 2,
+    "id": 64.5,
+    "od": 68.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S67",
+    "cs": 2,
+    "id": 66.5,
+    "od": 70.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S70",
+    "cs": 2,
+    "id": 69.5,
+    "od": 73.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S71",
+    "cs": 2,
+    "id": 70.5,
+    "od": 74.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S75",
+    "cs": 2,
+    "id": 74.5,
+    "od": 78.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S80",
+    "cs": 2,
+    "id": 79.5,
+    "od": 83.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S85",
+    "cs": 2,
+    "id": 84.5,
+    "od": 88.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S90",
+    "cs": 2,
+    "id": 89.5,
+    "od": 93.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S95",
+    "cs": 2,
+    "id": 94.5,
+    "od": 98.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S100",
+    "cs": 2,
+    "id": 99.5,
+    "od": 103.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S105",
+    "cs": 2,
+    "id": 104.5,
+    "od": 108.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S110",
+    "cs": 2,
+    "id": 109.5,
+    "od": 113.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S112",
+    "cs": 2,
+    "id": 111.5,
+    "od": 115.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S115",
+    "cs": 2,
+    "id": 114.5,
+    "od": 118.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S120",
+    "cs": 2,
+    "id": 119.5,
+    "od": 123.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S125",
+    "cs": 2,
+    "id": 124.5,
+    "od": 128.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S130",
+    "cs": 2,
+    "id": 129.5,
+    "od": 133.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S132",
+    "cs": 2,
+    "id": 131.5,
+    "od": 135.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S135",
+    "cs": 2,
+    "id": 134.5,
+    "od": 138.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S140",
+    "cs": 2,
+    "id": 139.5,
+    "od": 143.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S145",
+    "cs": 2,
+    "id": 144.5,
+    "od": 148.5
+  },
+  {
+    "standard": "JIS",
+    "code": "S150",
+    "cs": 2,
+    "id": 149.5,
+    "od": 153.5
+  },
+  {
+    "standard": "JIS",
+    "code": "SS005",
+    "cs": 1,
+    "id": 0.5,
+    "od": 2.5
+  },
+  {
+    "standard": "JIS",
+    "code": "SS008",
+    "cs": 1,
+    "id": 0.8,
+    "od": 2.8
+  },
+  {
+    "standard": "JIS",
+    "code": "SS010",
+    "cs": 1,
+    "id": 1,
+    "od": 3
+  },
+  {
+    "standard": "JIS",
+    "code": "SS012",
+    "cs": 1,
+    "id": 1.2,
+    "od": 3.2
+  },
+  {
+    "standard": "JIS",
+    "code": "SS015",
+    "cs": 1,
+    "id": 1.5,
+    "od": 3.5
+  },
+  {
+    "standard": "JIS",
+    "code": "SS020",
+    "cs": 1,
+    "id": 2,
+    "od": 4
+  },
+  {
+    "standard": "JIS",
+    "code": "SS022",
+    "cs": 1,
+    "id": 2.2,
+    "od": 4.2
+  },
+  {
+    "standard": "JIS",
+    "code": "SS025",
+    "cs": 1,
+    "id": 2.5,
+    "od": 4.5
+  },
+  {
+    "standard": "JIS",
+    "code": "SS028",
+    "cs": 1,
+    "id": 2.8,
+    "od": 4.8
+  },
+  {
+    "standard": "JIS",
+    "code": "SS030",
+    "cs": 1,
+    "id": 3,
+    "od": 5
+  },
+  {
+    "standard": "JIS",
+    "code": "SS032",
+    "cs": 1,
+    "id": 3.2,
+    "od": 5.2
+  },
+  {
+    "standard": "JIS",
+    "code": "SS035",
+    "cs": 1,
+    "id": 3.5,
+    "od": 5.5
+  },
+  {
+    "standard": "JIS",
+    "code": "SS038",
+    "cs": 1,
+    "id": 3.8,
+    "od": 5.8
+  },
+  {
+    "standard": "JIS",
+    "code": "SS040",
+    "cs": 1,
+    "id": 4,
+    "od": 6
+  },
+  {
+    "standard": "JIS",
+    "code": "SS042",
+    "cs": 1,
+    "id": 4.2,
+    "od": 6.2
+  },
+  {
+    "standard": "JIS",
+    "code": "SS045",
+    "cs": 1,
+    "id": 4.5,
+    "od": 6.5
+  },
+  {
+    "standard": "JIS",
+    "code": "SS048",
+    "cs": 1,
+    "id": 4.8,
+    "od": 6.8
+  },
+  {
+    "standard": "JIS",
+    "code": "SS050",
+    "cs": 1,
+    "id": 5,
+    "od": 7
+  },
+  {
+    "standard": "JIS",
+    "code": "SS055",
+    "cs": 1,
+    "id": 5.5,
+    "od": 7.5
+  },
+  {
+    "standard": "JIS",
+    "code": "SS060",
+    "cs": 1,
+    "id": 6,
+    "od": 8
+  },
+  {
+    "standard": "JIS",
+    "code": "SS065",
+    "cs": 1,
+    "id": 6.5,
+    "od": 8.5
+  },
+  {
+    "standard": "JIS",
+    "code": "SS070",
+    "cs": 1,
+    "id": 7,
+    "od": 9
+  },
+  {
+    "standard": "JIS",
+    "code": "SS075",
+    "cs": 1,
+    "id": 7.5,
+    "od": 9.5
+  },
+  {
+    "standard": "JIS",
+    "code": "SS080",
+    "cs": 1,
+    "id": 8,
+    "od": 10
+  },
+  {
+    "standard": "JIS",
+    "code": "SS085",
+    "cs": 1,
+    "id": 8.5,
+    "od": 10.5
+  },
+  {
+    "standard": "JIS",
+    "code": "SS090",
+    "cs": 1,
+    "id": 9,
+    "od": 11
+  },
+  {
+    "standard": "JIS",
+    "code": "SS095",
+    "cs": 1,
+    "id": 9.5,
+    "od": 11.5
+  },
+  {
+    "standard": "JIS",
+    "code": "SS100",
+    "cs": 1,
+    "id": 10,
+    "od": 12
+  },
+  {
+    "standard": "JIS",
+    "code": "SS105",
+    "cs": 1,
+    "id": 10.5,
+    "od": 12.5
+  },
+  {
+    "standard": "JIS",
+    "code": "SS110",
+    "cs": 1,
+    "id": 11,
+    "od": 13
+  },
+  {
+    "standard": "JIS",
+    "code": "SS115",
+    "cs": 1,
+    "id": 11.5,
+    "od": 13.5
+  },
+  {
+    "standard": "JIS",
+    "code": "SS120",
+    "cs": 1,
+    "id": 12,
+    "od": 14
+  },
+  {
+    "standard": "JIS",
+    "code": "SS125",
+    "cs": 1,
+    "id": 12.5,
+    "od": 14.5
+  },
+  {
+    "standard": "JIS",
+    "code": "SS130",
+    "cs": 1,
+    "id": 13,
+    "od": 15
+  },
+  {
+    "standard": "JIS",
+    "code": "SS135",
+    "cs": 1,
+    "id": 13.5,
+    "od": 15.5
+  },
+  {
+    "standard": "JIS",
+    "code": "SS140",
+    "cs": 1,
+    "id": 14,
+    "od": 16
+  },
+  {
+    "standard": "JIS",
+    "code": "SS145",
+    "cs": 1,
+    "id": 14.5,
+    "od": 16.5
+  },
+  {
+    "standard": "JIS",
+    "code": "SS150",
+    "cs": 1,
+    "id": 15,
+    "od": 17
+  },
+  {
+    "standard": "JIS",
+    "code": "SS155",
+    "cs": 1,
+    "id": 15.5,
+    "od": 17.5
+  },
+  {
+    "standard": "JIS",
+    "code": "SS160",
+    "cs": 1,
+    "id": 16,
+    "od": 18
+  },
+  {
+    "standard": "JIS",
+    "code": "SS165",
+    "cs": 1,
+    "id": 16.5,
+    "od": 18.5
+  },
+  {
+    "standard": "JIS",
+    "code": "SS170",
+    "cs": 1,
+    "id": 17,
+    "od": 19
+  },
+  {
+    "standard": "JIS",
+    "code": "SS175",
+    "cs": 1,
+    "id": 17.5,
+    "od": 19.5
+  },
+  {
+    "standard": "JIS",
+    "code": "SS180",
+    "cs": 1,
+    "id": 18,
+    "od": 20
+  },
+  {
+    "standard": "JIS",
+    "code": "SS185",
+    "cs": 1,
+    "id": 18.5,
+    "od": 20.5
+  },
+  {
+    "standard": "JIS",
+    "code": "SS190",
+    "cs": 1,
+    "id": 19,
+    "od": 21
+  },
+  {
+    "standard": "JIS",
+    "code": "SS195",
+    "cs": 1,
+    "id": 19.5,
+    "od": 21.5
+  },
+  {
+    "standard": "JIS",
+    "code": "SS200",
+    "cs": 1,
+    "id": 20,
+    "od": 22
+  },
+  {
+    "standard": "JIS",
+    "code": "V15",
+    "cs": 4,
+    "id": 14.5,
+    "od": 22.5
+  },
+  {
+    "standard": "JIS",
+    "code": "V24",
+    "cs": 4,
+    "id": 23.5,
+    "od": 31.5
+  },
+  {
+    "standard": "JIS",
+    "code": "V34",
+    "cs": 4,
+    "id": 33.5,
+    "od": 41.5
+  },
+  {
+    "standard": "JIS",
+    "code": "V40",
+    "cs": 4,
+    "id": 39.5,
+    "od": 47.5
+  },
+  {
+    "standard": "JIS",
+    "code": "V55",
+    "cs": 4,
+    "id": 54.5,
+    "od": 62.5
+  },
+  {
+    "standard": "JIS",
+    "code": "V70",
+    "cs": 4,
+    "id": 69,
+    "od": 77
+  },
+  {
+    "standard": "JIS",
+    "code": "V85",
+    "cs": 4,
+    "id": 84,
+    "od": 92
+  },
+  {
+    "standard": "JIS",
+    "code": "V100",
+    "cs": 4,
+    "id": 99,
+    "od": 107
+  },
+  {
+    "standard": "JIS",
+    "code": "V1055",
+    "cs": 10,
+    "id": 1044,
+    "od": 1064
+  },
+  {
+    "standard": "JIS",
+    "code": "V120",
+    "cs": 4,
+    "id": 119,
+    "od": 127
+  },
+  {
+    "standard": "JIS",
+    "code": "V150",
+    "cs": 4,
+    "id": 148.5,
+    "od": 156.5
+  },
+  {
+    "standard": "JIS",
+    "code": "V175",
+    "cs": 4,
+    "id": 173,
+    "od": 181
+  },
+  {
+    "standard": "JIS",
+    "code": "V225",
+    "cs": 6,
+    "id": 222.5,
+    "od": 234.5
+  },
+  {
+    "standard": "JIS",
+    "code": "V275",
+    "cs": 6,
+    "id": 272,
+    "od": 284
+  },
+  {
+    "standard": "JIS",
+    "code": "V325",
+    "cs": 6,
+    "id": 321.5,
+    "od": 333.5
+  },
+  {
+    "standard": "JIS",
+    "code": "V380",
+    "cs": 6,
+    "id": 376,
+    "od": 388
+  },
+  {
+    "standard": "JIS",
+    "code": "V430",
+    "cs": 6,
+    "id": 425.5,
+    "od": 437.5
+  },
+  {
+    "standard": "JIS",
+    "code": "V480",
+    "cs": 10,
+    "id": 475,
+    "od": 495
+  },
+  {
+    "standard": "JIS",
+    "code": "V530",
+    "cs": 10,
+    "id": 524.5,
+    "od": 544.5
+  },
+  {
+    "standard": "JIS",
+    "code": "V585",
+    "cs": 10,
+    "id": 579,
+    "od": 599
+  },
+  {
+    "standard": "JIS",
+    "code": "V640",
+    "cs": 10,
+    "id": 633.5,
+    "od": 653.5
+  },
+  {
+    "standard": "JIS",
+    "code": "V690",
+    "cs": 10,
+    "id": 683,
+    "od": 703
+  },
+  {
+    "standard": "JIS",
+    "code": "V740",
+    "cs": 10,
+    "id": 732.5,
+    "od": 752.5
+  },
+  {
+    "standard": "JIS",
+    "code": "V790",
+    "cs": 10,
+    "id": 782,
+    "od": 802
+  },
+  {
+    "standard": "JIS",
+    "code": "V845",
+    "cs": 10,
+    "id": 836.5,
+    "od": 856.5
+  },
+  {
+    "standard": "JIS",
+    "code": "V950",
+    "cs": 10,
+    "id": 940.5,
+    "od": 960.5
+  }
+]

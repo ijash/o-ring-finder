@@ -1,11 +1,11 @@
 import { useSort } from "components/context/SortContext";
 import CustomModal from "components/modal/modal";
-import { DataRepresentation, IData, IDataFilter, Standard } from "data";
+import { DataRepresentation, IDataFilter, Standard } from "data";
 import React, { useState } from "react";
 import { createPortal } from "react-dom";
 
 interface props {
-  data: IData[];
+  data: readonly DataRepresentation[];
   filter?: IDataFilter;
 }
 const rowStyle = "ps-2";
@@ -45,13 +45,8 @@ export const TableRowsComponent: React.FC<props> = ({ data, filter }) => {
     setModalData(null);
   };
 
-  let rows: DataRepresentation[] = [];
-
-  data.forEach((s) => {
-    let processedData: DataRepresentation[];
-
-    if (filter) {
-      processedData = s.getValues(filter.unit).filter((row) => {
+  const filteredData = filter
+    ? data.filter((row) => {
         if (filter.minCs && row.cs < filter.minCs) return false;
         if (filter.maxCs && row.cs > filter.maxCs) return false;
         if (filter.minId && row.id < filter.minId) return false;
@@ -65,18 +60,14 @@ export const TableRowsComponent: React.FC<props> = ({ data, filter }) => {
           return false;
         if (
           filter.standard &&
-          !filter.standard.includes(row.standard as Standard)
+          !filter.standard.includes(row.standard)
         )
           return false;
         return true;
-      });
-    } else {
-      processedData = s.getValues();
-    }
-    rows.push(...processedData);
-  });
+      })
+    : [...data];
 
-  rows.sort((a, b) => {
+  const rows = [...filteredData].sort((a, b) => {
     if (sortBy && sortDirection !== "undefined") {
       const aValue = a[sortBy as keyof DataRepresentation];
       const bValue = b[sortBy as keyof DataRepresentation];
@@ -98,9 +89,7 @@ export const TableRowsComponent: React.FC<props> = ({ data, filter }) => {
             style={{ cursor: "pointer" }}
           >
             <td
-              className={`${rowStyle} ${specialStyle.standard(
-                row.standard as Standard
-              )}`}
+              className={`${rowStyle} ${specialStyle.standard(row.standard)}`}
               property="brand"
             >
               {row.standard}
