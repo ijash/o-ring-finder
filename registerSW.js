@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/o-ring-finder/sw.js', { scope: '/o-ring-finder/' })})}
