@@ -1,3 +1,4 @@
+import type { TableHeadField } from "contexts";
 import {
   DataRepresentation,
   IDataObject,
@@ -14,6 +15,14 @@ export const TABLE_HEADERS: readonly ["Standard", "Code", "ID", "OD", "CS"] = [
   "ID",
   "OD",
   "CS",
+] as const;
+
+export const TABLE_HEADER_KEYS: readonly TableHeadField[] = [
+  "standard",
+  "code",
+  "id",
+  "od",
+  "cs",
 ] as const;
 
 export const as568Data: readonly IDataObject[] = as568Json.map((d) => ({

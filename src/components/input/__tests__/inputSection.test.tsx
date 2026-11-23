@@ -126,6 +126,37 @@ describe("InputSection component", () => {
     });
   });
 
+  test("clears dimension and code inputs while preserving imperial unit sync in state and select UI on clear", () => {
+    const onFilterChange = vi.fn();
+    render(
+      <TestWrapper
+        initialFilter={{ unit: MeasurementUnit.INCH }}
+        onFilterChange={onFilterChange}
+      >
+        <InputSection />
+      </TestWrapper>
+    );
+
+    const unitSelect = screen.getByRole("combobox") as HTMLSelectElement;
+    const codeInput = screen.getByPlaceholderText(/ring code/i) as HTMLInputElement;
+    const minIdInput = screen.getByPlaceholderText(/min id/i) as HTMLInputElement;
+
+    expect(unitSelect.value).toBe(MeasurementUnit.INCH);
+
+    fireEvent.change(codeInput, { target: { value: "AS" } });
+    fireEvent.change(minIdInput, { target: { value: "10" } });
+
+    const clearButton = screen.getByRole("button", { name: /clear filter/i });
+    fireEvent.click(clearButton);
+
+    expect(codeInput.value).toBe("");
+    expect(minIdInput.value).toBe("");
+    expect(unitSelect.value).toBe(MeasurementUnit.INCH);
+    expect(onFilterChange).toHaveBeenCalledWith({
+      unit: MeasurementUnit.INCH,
+    });
+  });
+
   test("parses numeric bounds and merges rapid multi-field updates without dropping fields", () => {
     const onFilterChange = vi.fn();
     render(

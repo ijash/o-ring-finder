@@ -14,10 +14,18 @@ import {
 import { useFilter } from "contexts";
 import { IDataFilter, MeasurementUnit } from "data";
 
+type NumericFilterField =
+  | "minId"
+  | "maxId"
+  | "minOd"
+  | "maxOd"
+  | "minCs"
+  | "maxCs";
+
 export const InputSection: React.FC<StandardElementProps> = () => {
   const { t } = useTranslation("global");
 
-  const { setFilter } = useFilter();
+  const { filter, setFilter } = useFilter();
   const formRef = useRef<HTMLFormElement>(null);
   const pendingFilterRef = useRef<Partial<IDataFilter>>({});
 
@@ -40,35 +48,46 @@ export const InputSection: React.FC<StandardElementProps> = () => {
     };
   }, [debouncedFlush]);
 
-  const isNumericField = (name: keyof IDataFilter): boolean =>
-    name === "minId" ||
-    name === "maxId" ||
-    name === "minOd" ||
-    name === "maxOd" ||
-    name === "minCs" ||
-    name === "maxCs";
-
-  const handleFilter = (filterName: keyof IDataFilter) => {
-    return (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleNumericFilter = (filterName: NumericFilterField) => {
+    return (event: React.ChangeEvent<HTMLInputElement>) => {
       const raw = event.target.value;
-      const parsedValue = isNumericField(filterName)
-        ? raw.trim() === ""
-          ? undefined
-          : Number(raw)
-        : raw;
-
-      pendingFilterRef.current[filterName] = parsedValue as never;
+      pendingFilterRef.current[filterName] =
+        raw.trim() === "" ? undefined : Number(raw);
       debouncedFlush();
     };
+  };
+
+  const handleTextFilter = (filterName: "code") => {
+    return (event: React.ChangeEvent<HTMLInputElement>) => {
+      pendingFilterRef.current[filterName] = event.target.value;
+      debouncedFlush();
+    };
+  };
+
+  const handleUnitFilter = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const raw = event.target.value;
+    const nextUnit =
+      raw === MeasurementUnit.INCH
+        ? MeasurementUnit.INCH
+        : MeasurementUnit.MM;
+    pendingFilterRef.current.unit = nextUnit;
+    debouncedFlush();
   };
 
   const handleClear = () => {
     debouncedFlush.cancel();
     pendingFilterRef.current = {};
-    setFilter((prev) => ({
-      unit: prev.unit,
-    }));
+    const preservedUnit = filter.unit ?? MeasurementUnit.MM;
     formRef.current?.reset();
+    if (formRef.current) {
+      const select = formRef.current.querySelector("select");
+      if (select) {
+        select.value = preservedUnit;
+      }
+    }
+    setFilter({
+      unit: preservedUnit,
+    });
     window.scrollTo(0, 0);
   };
 
@@ -97,6 +116,7 @@ export const InputSection: React.FC<StandardElementProps> = () => {
           <LabelWrapper label={t("inputForms.unit.label")}>
             <SelectInput
               name={t("inputForms.unit.label")}
+              value={filter.unit}
               options={[
                 {
                   name: t("inputForms.unit.placeholder.metric"),
@@ -107,28 +127,28 @@ export const InputSection: React.FC<StandardElementProps> = () => {
                   value: MeasurementUnit.INCH,
                 },
               ]}
-              handleChange={handleFilter("unit")}
+              handleChange={handleUnitFilter}
             ></SelectInput>
           </LabelWrapper>
           <LabelWrapper label={t("inputForms.code.label")}>
             <TextInput
               name={t("inputForms.code.placeholder")}
               id="ringcode"
-              handleChange={handleFilter("code")}
+              handleChange={handleTextFilter("code")}
             ></TextInput>
           </LabelWrapper>
           <LabelWrapper label={t("inputForms.minId.label")}>
             <NumberInput
               name={t("inputForms.minId.placeholder")}
               id="minid"
-              handleChange={handleFilter("minId")}
+              handleChange={handleNumericFilter("minId")}
             ></NumberInput>
           </LabelWrapper>
           <LabelWrapper label={t("inputForms.maxId.label")}>
             <NumberInput
               name={t("inputForms.maxId.placeholder")}
               id="maxid"
-              handleChange={handleFilter("maxId")}
+              handleChange={handleNumericFilter("maxId")}
             ></NumberInput>
           </LabelWrapper>
         </div>
@@ -138,28 +158,28 @@ export const InputSection: React.FC<StandardElementProps> = () => {
             <NumberInput
               name={t("inputForms.minOd.placeholder")}
               id="minod"
-              handleChange={handleFilter("minOd")}
+              handleChange={handleNumericFilter("minOd")}
             ></NumberInput>
           </LabelWrapper>
           <LabelWrapper label={t("inputForms.maxOd.label")}>
             <NumberInput
               name={t("inputForms.maxOd.placeholder")}
               id="maxod"
-              handleChange={handleFilter("maxOd")}
+              handleChange={handleNumericFilter("maxOd")}
             ></NumberInput>
           </LabelWrapper>
           <LabelWrapper label={t("inputForms.minCs.label")}>
             <NumberInput
               name={t("inputForms.minCs.placeholder")}
               id="mincs"
-              handleChange={handleFilter("minCs")}
+              handleChange={handleNumericFilter("minCs")}
             ></NumberInput>
           </LabelWrapper>
           <LabelWrapper label={t("inputForms.maxCs.label")}>
             <NumberInput
               name={t("inputForms.maxCs.placeholder")}
               id="maxcs"
-              handleChange={handleFilter("maxCs")}
+              handleChange={handleNumericFilter("maxCs")}
             ></NumberInput>
           </LabelWrapper>
         </div>

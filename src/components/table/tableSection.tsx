@@ -1,6 +1,6 @@
 import { TableHead, TableRowsComponent } from "components";
-import { SortProvider, TableHeadField, useFilter } from "contexts";
-import { TABLE_HEADERS, getAllORingData } from "data";
+import { SortProvider, useFilter } from "contexts";
+import { TABLE_HEADER_KEYS, getAllORingData } from "data";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -15,13 +15,10 @@ export const TableSection: React.FC = () => {
 
   const headerItems = useMemo(
     () =>
-      TABLE_HEADERS.map((header) => {
-        const key = header.toLowerCase() as TableHeadField;
-        return {
-          key,
-          label: t(`table.tableHead.${key}`),
-        };
-      }),
+      TABLE_HEADER_KEYS.map((key) => ({
+        key,
+        label: t(`table.tableHead.${key}`),
+      })),
     [t]
   );
 
