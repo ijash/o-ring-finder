@@ -1,7 +1,7 @@
 # O-Ring Finder — AS568, JIS & Metric O-Ring Size Lookup Tool
 
 [![Live Demo](https://img.shields.io/badge/live-GitHub%20Pages-brightgreen.svg)](https://ijash.github.io/o-ring-finder/)
-[![Version](https://img.shields.io/badge/version-3.2.0-blue.svg)](https://github.com/ijash/o-ring-finder/releases)
+[![Version](https://img.shields.io/badge/version-3.3.0-blue.svg)](https://github.com/ijash/o-ring-finder/releases)
 [![License: GPL-3.0](https://img.shields.io/badge/license-GPL--3.0-orange.svg)](./LICENSE)
 
 > **Open the live tool directly:** **[https://ijash.github.io/o-ring-finder/](https://ijash.github.io/o-ring-finder/)**
@@ -29,6 +29,7 @@ No installation or account required—use the live web app on desktop or mobile:
 
 ## Key Features
 
+* **Dark & Light Theme Mode:** Accessible navbar theme toggle (`ThemeContext`) with synchronous anti-FOUC pre-paint script, Bootstrap 5.3 `data-bs-theme` color modes, dynamic `<meta name="theme-color">` sync, and realistic 3D toroidal SVG visualizer with high contrast in both themes.
 * **Precision Range Filtering:** Filter O-rings simultaneously by `ID`, `OD`, and `CS` min/max ranges or search directly by size code.
 * **URL Deep-Linking & Shareable State:** Bookmark or share exact filter configurations via query parameters (e.g. `?code=010&unit=inch`), automatically synchronized with browser history.
 * **Instant Metric ↔ Imperial Conversion:** Switch seamlessly between **millimeters (`mm`)** and **inches (`″`)** with deterministic 3-decimal precision (`1 in = 25.4 mm`).
@@ -65,7 +66,7 @@ o-ring-finder/
 └── src/
     ├── components/             # UI components (header, input, table, modal, faq, footer, analytics)
     │   └── faq/                # Collapsible bilingual sizing guide & FAQ
-    ├── contexts/               # FilterContext (useFilter) & SortContext (useSort)
+    ├── contexts/               # ThemeContext (useTheme), FilterContext (useFilter) & SortContext (useSort)
     ├── css/                    # SCSS design tokens & modular styles
     ├── data/                   # Static JSON catalogs (as568, jis, metric) + pure accessors
     ├── locales/                # Bilingual EN & ID translation files
@@ -122,6 +123,14 @@ Licensed under the **[GNU General Public License v3.0 (GPL-3.0)](https://www.goo
 ## Changelog
 
 ```text
+v3.3.0 (2026-11-23)
+- Add dark and light theme mode with 2-way toggle in navbar and localStorage persistence
+- Add synchronous anti-FOUC pre-paint script in index.html with OS prefers-color-scheme detection
+- Implement ThemeContext (useTheme) with dynamic <meta name="theme-color"> synchronization
+- Add zero-dependency inline SVG IconSun and IconMoon with 100% EN/ID bilingual aria-labels
+- Adapt Bootstrap 5.3 data-bs-theme and SCSS dark-mode styling across table, inputs, modal, and FAQ
+- Upgrade RingVisualization to realistic 3D toroidal SVG with dot-grid backdrop and theme contrast
+
 v3.2.0 (2026-11-23)
 - Implement URL query parameter deep-linking and replaceState sync (?code=...&unit=...)
 - Embed Schema.org JSON-LD structured data graph (WebApplication, Dataset, FAQPage) in index.html
